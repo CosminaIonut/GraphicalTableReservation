@@ -47,14 +47,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("Insert  INTO "+ TABLE_NAME_RESTAURANT + " (NAME,ADRESS) Values('McTest', 'Str. Paris 23')");
         db.execSQL("Insert  INTO "+ TABLE_NAME_MAP + " (PHOTOBG,RID) Values('McTest.jpg', 1)");
-        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(700,700,1)");
-        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(300,450,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500,700,1)");
+//        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(300,400,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(150,100,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(150,200,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(150,300,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(150,400,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500,500,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500,600,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(370,350,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(370,250,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(600,150,1)");
+//        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500,600,1)");
+//        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500,600,1)");
 
 
 
     }
     public Cursor getAllData(){    //Get data from table
-       // insertData();
+//        insertData();
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor result= db.rawQuery("select * from " + TABLE_NAME_TABLE, null );
         return result;

@@ -23,5 +23,6 @@
             android:rotation="180"
             android:scaleType="fitXY"
             app:srcCompat="@drawable/mapt" />
+
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
