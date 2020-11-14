@@ -47,23 +47,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("Insert  INTO "+ TABLE_NAME_RESTAURANT + " (NAME,ADRESS) Values('McTest', 'Str. Paris 23')");
         db.execSQL("Insert  INTO "+ TABLE_NAME_MAP + " (PHOTOBG,RID) Values('McTest.jpg', 1)");
-        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500,700,1)");
+        //db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500,700,1)");
 //        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(300,400,1)");
-        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(150,100,1)");
-        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(150,200,1)");
-        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(150,300,1)");
-        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(150,400,1)");
-        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500,500,1)");
-        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500,600,1)");
-        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(370,350,1)");
-        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(370,250,1)");
-        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(600,150,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(200,100,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(120,230,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(200,350,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(120,470,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500,100,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(650,200,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500, 300,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(575, 650,1)");
+        //db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(600,150,1)");
 //        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500,600,1)");
 //        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500,600,1)");
-
-
-
     }
+
+    public void deleteAllTables(){
+        // for testing purposes only (i hope)
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("Delete FROM " + TABLE_NAME_TABLE);
+    }
+
     public Cursor getAllData(){    //Get data from table
 //        insertData();
         SQLiteDatabase db = this.getWritableDatabase();

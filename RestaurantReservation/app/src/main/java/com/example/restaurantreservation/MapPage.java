@@ -50,7 +50,7 @@ public class MapPage extends AppCompatActivity {
                 tv.setId(id);
                 RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
                         ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                String mDrawableName = "tablempty";
+                String mDrawableName = "tablebutton";
                 int resID = getResources().getIdentifier(mDrawableName , "drawable", getPackageName());
                 tv.setImageResource(resID);
                 params.addRule(RelativeLayout.ALIGN_PARENT_LEFT, RelativeLayout.TRUE);
@@ -109,7 +109,7 @@ public class MapPage extends AppCompatActivity {
                         formDialog();
                     }
                 });
-                mRelativeLayout.setBackgroundColor(Color.parseColor("#000000"));
+                //mRelativeLayout.setBackgroundColor(Color.parseColor("#000000"));
             }
 
         }
