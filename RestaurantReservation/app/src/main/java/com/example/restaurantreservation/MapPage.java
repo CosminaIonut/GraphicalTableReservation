@@ -105,8 +105,8 @@ public class MapPage extends AppCompatActivity {
 
                     @Override
                     public void onClick(View view) {
-                       // showMessage("Error", String.valueOf(tv.getId()));
-                        formDialog();
+                        showMessage("Error", String.valueOf(tv.getId()));
+//                        formDialog();
                     }
                 });
                 mRelativeLayout.setBackgroundColor(Color.parseColor("#000000"));
@@ -129,29 +129,29 @@ public class MapPage extends AppCompatActivity {
         builder.setMessage(message);
         builder.show();
     }
-    public void formDialog(){
-        LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-        View layout = inflater.inflate(R.layout.dialog_layout, (ViewGroup) findViewById(R.id.layout_root));
-//layout_root should be the name of the "top-level" layout node in the dialog_layout.xml file.
-        final EditText nameBox = (EditText) layout.findViewById(R.id.name_box);
-        final EditText phoneBox = (EditText) layout.findViewById(R.id.phone_box);
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setView(layout);
-        builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-                //save info where you want it
-            }
-        });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-        AlertDialog dialog = builder.create();
-        builder.show();
-
-    }
+//    public void formDialog(){
+//        LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+//        View layout = inflater.inflate(R.layout.dialog_layout, (ViewGroup) findViewById(R.id.layout_root));
+////layout_root should be the name of the "top-level" layout node in the dialog_layout.xml file.
+//        final EditText nameBox = (EditText) layout.findViewById(R.id.name_box);
+//        final EditText phoneBox = (EditText) layout.findViewById(R.id.phone_box);
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//        builder.setView(layout);
+//        builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                dialog.dismiss();
+//                //save info where you want it
+//            }
+//        });
+//        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                dialog.dismiss();
+//            }
+//        });
+//        AlertDialog dialog = builder.create();
+//        builder.show();
+//
+//    }
 }

@@ -21,12 +21,8 @@
         android:drawablePadding="12dp"
         android:ems="10"
         android:hint="Full Name "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.463" />
+        android:singleLine="true"
+         />
 
     <TextView
         android:id="@+id/date_pick"
@@ -35,7 +31,6 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="37dp"
-
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="340dp"
         android:background="@drawable/custom_input"
@@ -46,12 +41,7 @@
         android:paddingTop="15dp"
         android:text="Date "
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.463" />
+         />
 
     <EditText
         android:id="@+id/phone"
@@ -73,7 +63,8 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.463" />
+        app:layout_constraintVertical_bias="0.463"
+        android:singleLine="true" />
 
     <TextView
         android:id="@+id/startHour"
@@ -126,6 +117,7 @@
         app:layout_constraintVertical_bias="0.463" />
 
     <Button
+        android:id="@+id/candelbooking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -139,6 +131,7 @@
         android:textSize="20dp" />
 
     <Button
+        android:id="@+id/booktableButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

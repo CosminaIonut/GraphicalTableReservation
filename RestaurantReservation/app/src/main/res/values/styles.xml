@@ -6,6 +6,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
         <item name="android:timePickerDialogTheme">@style/MyTimePickerDialogTheme</item>
+        <item name="android:windowAnimationStyle">@style/animation</item>
     </style>
 
 
@@ -22,6 +23,10 @@
     <style name="MyTimePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
         <item name="android:timePickerStyle">@style/TimePickerFragment</item>
         <item name="android:colorAccent">@color/colorDatePickerAccent</item>
+    </style>
+    <style name="animation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
     </style>
 
 
