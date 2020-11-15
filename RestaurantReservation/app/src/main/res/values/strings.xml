@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RestaurantReservation</string>
+    <string name="phonenumber">PhoneNumber</string>
+    <string name="fullname">FullName</string>
+</resources>
