@@ -20,9 +20,10 @@
             android:id="@+id/imageView2"
             android:layout_width="1080dp"
             android:layout_height="1920dp"
-            android:rotation="180"
+            android:rotation="0"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/mapt" />
+            app:srcCompat="@drawable/refresh" />
+
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

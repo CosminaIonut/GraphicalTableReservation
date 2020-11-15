@@ -8,15 +8,20 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 
+
+
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "RestaurantApp.db";
+    public static final String DATABASE_NAME ="RestaurantApp.db";
+
     public static final String TABLE_NAME_RESTAURANT = "restaurant";
 
     public static final String TABLE_NAME_MAP = "map";
     public static final String TABLE_NAME_DOOR = "door_positioning";
     public static final String TABLE_NAME_TABLE = "table_positioning";
     public static final String TABLE_NAME_WINDOW = "window_positioning";
+
     public static final String TABLE_NAME_USERS = "users";
+
 
 
     public DatabaseHelper(Context context) {
@@ -26,12 +31,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {  // create table
+
         sqLiteDatabase.execSQL("create table " + TABLE_NAME_RESTAURANT + " (ID INTEGER PRIMARY KEY AUTOINCREMENT,NAME TEXT, ADRESS TEXT )");
         sqLiteDatabase.execSQL("create table " + TABLE_NAME_MAP + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, PHOTOBG TEXT,  RID INTEGER, FOREIGN KEY (RID) REFERENCES " + TABLE_NAME_RESTAURANT + "( ID) )");
         sqLiteDatabase.execSQL("create table " + TABLE_NAME_TABLE + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, X  FLOAT, Y FLOAT , MAPID INTEGER, FOREIGN KEY (MAPID) REFERENCES " + TABLE_NAME_MAP + "( ID)  )");
         // sqLiteDatabase.execSQL("create table " + TABLE_NAME_DOOR+ " (ID INTEGER PRIMARY KEY AUTOINCREMENT,X , ADRESS TEXT )");
         sqLiteDatabase.execSQL("create table " + TABLE_NAME_USERS + "(name TEXT, email TEXT primary key, password TEXT)");
         //sqLiteDatabase.execSQL("Insert  INTO " + TABLE_NAME_USERS + " (name,email,password) Values('Alex', 'test','test1')");
+
     }
 
     @Override
@@ -44,25 +51,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public void insertData() {    //insert in Table
+    public void insertData(){    //insert in Table
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("Insert  INTO " + TABLE_NAME_RESTAURANT + " (NAME,ADRESS) Values('McTest', 'Str. Paris 23')");
-        db.execSQL("Insert  INTO " + TABLE_NAME_MAP + " (PHOTOBG,RID) Values('McTest.jpg', 1)");
-        db.execSQL("Insert  INTO " + TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500,700,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_RESTAURANT + " (NAME,ADRESS) Values('McTest', 'Str. Paris 23')");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_MAP + " (PHOTOBG,RID) Values('McTest.jpg', 1)");
+        //db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500,700,1)");
 //        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(300,400,1)");
-        db.execSQL("Insert  INTO " + TABLE_NAME_TABLE + " (X,Y, MAPID) Values(150,100,1)");
-        db.execSQL("Insert  INTO " + TABLE_NAME_TABLE + " (X,Y, MAPID) Values(150,200,1)");
-        db.execSQL("Insert  INTO " + TABLE_NAME_TABLE + " (X,Y, MAPID) Values(150,300,1)");
-        db.execSQL("Insert  INTO " + TABLE_NAME_TABLE + " (X,Y, MAPID) Values(150,400,1)");
-        db.execSQL("Insert  INTO " + TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500,500,1)");
-        db.execSQL("Insert  INTO " + TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500,600,1)");
-        db.execSQL("Insert  INTO " + TABLE_NAME_TABLE + " (X,Y, MAPID) Values(370,350,1)");
-        db.execSQL("Insert  INTO " + TABLE_NAME_TABLE + " (X,Y, MAPID) Values(370,250,1)");
-        db.execSQL("Insert  INTO " + TABLE_NAME_TABLE + " (X,Y, MAPID) Values(600,150,1)");
-
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(200,100,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(120,230,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(200,350,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(120,470,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500,100,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(650,200,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500, 300,1)");
+        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(575, 650,1)");
+        //db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(600,150,1)");
 //        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500,600,1)");
 //        db.execSQL("Insert  INTO "+ TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500,600,1)");
-
     }
 
     public boolean insertUser(String name, String email, String password) {
@@ -100,4 +105,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result;
 
     }
+
+
+    public void deleteAllTables(){
+        // for testing purposes only (i hope)
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("Delete FROM " + TABLE_NAME_TABLE);
+    }
+
+
+
+
 }
