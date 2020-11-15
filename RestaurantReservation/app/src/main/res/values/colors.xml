@@ -5,6 +5,8 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="colorDatePickerBackGround">#faab44</color>
     <color name="colorDatePickerAccent">#2b2b2b</color>
+    <color name="colorRedError">#DA5F6A</color>
     <color name="colorOrange">#faab44</color>
     <color name="colorDarkGrey">#545464</color>
+
 </resources>
