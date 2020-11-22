@@ -13,8 +13,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         myDb = new DatabaseHelper(this);
-        myDb.deleteAllTables();
-        myDb.insertData();
+//        myDb.deleteAllTables();
+//        myDb.insertData();
         setContentView(R.layout.activity_main);
 
         Button buttonOne = findViewById(R.id.buttonOne);

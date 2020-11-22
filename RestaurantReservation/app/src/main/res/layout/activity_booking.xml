@@ -43,7 +43,7 @@
         android:textSize="20dp"
          />
 
-    <EditText
+    <com.santalu.maskedittext.MaskEditText
         android:id="@+id/phone"
         android:layout_width="282dp"
         android:layout_height="56dp"
@@ -57,7 +57,9 @@
         android:drawableStart="@drawable/custom_phone_icon"
         android:drawablePadding="12dp"
         android:ems="10"
+        android:inputType="phone"
         android:hint="Phone Number"
+        app:met_mask="+4##########"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
