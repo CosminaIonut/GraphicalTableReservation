@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 //        myDb.deleteAllTables();
 //        myDb.insertData();
 //        myDb.insertFoodDrinks();
-        myDb.insertMenu();
+//        myDb.insertMenu();
         setContentView(R.layout.activity_main);
 
         Button buttonOne = findViewById(R.id.buttonOne);
