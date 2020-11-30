@@ -8,5 +8,5 @@
     <color name="colorRedError">#DA5F6A</color>
     <color name="colorOrange">#faab44</color>
     <color name="colorDarkGrey">#545464</color>
-
+    <color name="colorWhite">#FFFFFF</color>
 </resources>
