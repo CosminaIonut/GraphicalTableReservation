@@ -2,5 +2,7 @@
     <string name="app_name">RestaurantReservation</string>
     <string name="phonenumber">PhoneNumber</string>
     <string name="fullname">FullName</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
