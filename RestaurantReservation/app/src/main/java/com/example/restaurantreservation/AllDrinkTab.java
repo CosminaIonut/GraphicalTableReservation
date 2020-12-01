@@ -35,7 +35,7 @@ public class AllDrinkTab extends Fragment {
     DatabaseHelper myDb;
     ArrayList<String> item_id,item_name, item_desc, item_price , item_quantity, item_sortiment;
     RecyclerView recyclerView;
-    CustomAdapter customAdapter;
+    CustomAdapterDrinks customAdapter;
     private NonSwipeableViewPager viewPager;
     private TabLayout tabLayout;
     public PageAdapter2 pagerAdapter;
@@ -92,7 +92,7 @@ public class AllDrinkTab extends Fragment {
 
         RecyclerView.LayoutManager recyce = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(recyce);
-        customAdapter = new CustomAdapter(getContext(), item_id, item_name, item_desc, item_price, item_quantity, item_sortiment);
+        customAdapter = new CustomAdapterDrinks(getContext(), item_id, item_name, item_desc, item_price, item_quantity, item_sortiment);
         recyclerView.setAdapter(customAdapter);
         return view;
     }
@@ -105,13 +105,14 @@ public class AllDrinkTab extends Fragment {
         if (position == 0) {
             result = myDb.getallDrinksFromMenu(restaurantId);
         } else if (position == 1) {
-            result = myDb.getallDrinkSortiment(restaurantId, "Fresh & Lemonade");
+            result = myDb.getallDrinkSortiment(restaurantId, "Tea");
+
 
         } else if (position == 2) {
-            result = myDb.getallDrinkSortiment(restaurantId, "Coffee");
+            result = myDb.getallDrinkSortiment(restaurantId, "Fresh & Lemonade");
 
         } else if (position == 3) {
-            result = myDb.getallDrinkSortiment(restaurantId, "Tea");
+            result = myDb.getallDrinkSortiment(restaurantId, "Coffee");
 
         }
 //        System.out.println(position);

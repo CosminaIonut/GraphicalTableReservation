@@ -90,9 +90,7 @@ public class tab1 extends Fragment {
         View view = inflater.inflate(R.layout.fragment_tab1, container, false);
         tabLayout = (TabLayout) view.findViewById(R.id.tabLayoutFoodSection);
         myDb = new DatabaseHelper(getContext());
-//        t2=view.findViewById(R.id.sal);
-//        t3=view.findViewById(R.id.past);
-//        t1=view.findViewById(R.id.food2);
+
         getFoodSortiments();
         viewPager=view.findViewById(R.id.menu_viewPagerFood);
 
@@ -112,7 +110,6 @@ public class tab1 extends Fragment {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
-//                System.out.println(tab.getPosition()+"++++++++++++++++++++++");
                 if(tab.getPosition()==0){
                     pagerAdapter.notifyDataSetChanged();
                 }else if(tab.getPosition()==1){
