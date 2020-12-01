@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -14,9 +15,9 @@ import androidx.fragment.app.Fragment;
 
 public class RestaurantFragment extends Fragment {
     private static final String TAG="MenuFragment";
-    private Button btnNavFrgMenu;
-    private Button btnNavFrgRestaurant;
-    private Button btnNavBookingActivity;
+    private ImageView btnNavFrgMenu;
+    private ImageView btnNavFrgRestaurant;
+    private ImageView btnNavBookingActivity;
 
     @Nullable
     @Override
@@ -26,6 +27,7 @@ public class RestaurantFragment extends Fragment {
           btnNavFrgMenu= view.findViewById(R.id.menu_fragment);
           btnNavFrgRestaurant= view.findViewById(R.id.restaurant_fragment);
           btnNavBookingActivity=view.findViewById(R.id.buttonBookingDetails);
+
           btnNavFrgMenu.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View view) {
@@ -33,21 +35,24 @@ public class RestaurantFragment extends Fragment {
                   ((RestaurantHomePage)getActivity()).setViewPager(0);
               }
           });
-        btnNavFrgRestaurant.setOnClickListener(new View.OnClickListener() {
+
+          btnNavFrgRestaurant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(),"Going to Frg Restaurnat", Toast.LENGTH_SHORT).show();
                 ((RestaurantHomePage)getActivity()).setViewPager(1);
             }
-        });
-        btnNavBookingActivity.setOnClickListener(new View.OnClickListener() {
+          });
+
+          btnNavBookingActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(),"Going to Frg Menu", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity() , Booking.class);
                 startActivity(intent);
             }
-        });
+          });
+
           return view;
     }
 }
