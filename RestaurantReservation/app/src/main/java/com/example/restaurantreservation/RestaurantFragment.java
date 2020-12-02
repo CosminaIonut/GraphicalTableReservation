@@ -31,7 +31,6 @@ public class RestaurantFragment extends Fragment {
           btnNavFrgMenu.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View view) {
-                  Toast.makeText(getActivity(),"Going to Frg Menu", Toast.LENGTH_SHORT).show();
                   ((RestaurantHomePage)getActivity()).setViewPager(0);
               }
           });
@@ -39,7 +38,6 @@ public class RestaurantFragment extends Fragment {
           btnNavFrgRestaurant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(),"Going to Frg Restaurnat", Toast.LENGTH_SHORT).show();
                 ((RestaurantHomePage)getActivity()).setViewPager(1);
             }
           });
@@ -47,7 +45,6 @@ public class RestaurantFragment extends Fragment {
           btnNavBookingActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(),"Going to Frg Menu", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity() , Booking.class);
                 startActivity(intent);
             }

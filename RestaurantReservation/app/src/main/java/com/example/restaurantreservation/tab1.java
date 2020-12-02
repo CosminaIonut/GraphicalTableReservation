@@ -50,7 +50,6 @@ public class tab1 extends Fragment {
 
     public tab1() {
         // Required empty public constructor
-        new AllFood();
     }
 
     /**
@@ -86,7 +85,7 @@ public class tab1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        new AllFood();
+
         View view = inflater.inflate(R.layout.fragment_tab1, container, false);
         tabLayout = (TabLayout) view.findViewById(R.id.tabLayoutFoodSection);
         myDb = new DatabaseHelper(getContext());
@@ -96,17 +95,21 @@ public class tab1 extends Fragment {
 
         for (String s:hashSet){
             System.out.println(s);
-            TabLayout.Tab firstTab = tabLayout.newTab(); // Create a new Tab names "First Tab"
-            firstTab.setText(s); // set the Text for the first Tab// set an icon for the first tab
+            TabLayout.Tab firstTab = tabLayout.newTab();
+            firstTab.setText(s);
             tabLayout.addTab(firstTab);
         }
-        System.out.println(tabLayout.getTabCount());
         pagerAdapter= new PageAdapter2(getFragmentManager(),tabLayout.getTabCount());
+        int number = tabLayout.getTabCount();
+        for (int i=0; i<= number;i++){
+                pagerAdapter.addFragment(new AllFood(i),"food");
+        }
         viewPager.setAdapter(pagerAdapter);
-
+//        tabLayout.setupWithViewPager(viewPager);
 
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
@@ -132,49 +135,9 @@ public class tab1 extends Fragment {
             }
         });
 
-//        recyclerView=view.findViewById(R.id.menuList);
-////          listView=view.findViewById(R.id.menuList);
-//        item_id=new ArrayList<>();
-//        item_name=new ArrayList<>();
-//        item_desc=new ArrayList<>();
-//        item_quantity=new ArrayList<>();
-//        item_price=new ArrayList<>();
-//        item_sortiment=new ArrayList<>();
-//        storeDataInArray();
-//        RecyclerView.LayoutManager recyce = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
-//        recyclerView.setLayoutManager(recyce);
-//        customAdapter=new CustomAdapter(getContext(),item_id,item_name,item_desc,item_price,item_quantity,item_sortiment);
-//        recyclerView.setAdapter(customAdapter);
         return view;
     }
 
-    public void storeDataInArray() {
-        int restaurantId = 1; // acum hardcodat da o sa vina in functie de restaurant
-        Cursor result = myDb.getallFoodFromMenu(restaurantId);
-        if (result.getCount() == 0) {
-            showMessage("Error", "Keine Tupel in der Tabelle");
-
-        } else {
-            while (result.moveToNext()) {
-
-                String itemID = result.getString(2);
-                String itemName = result.getString(3);
-                String itemDescription = result.getString(4);
-                String price = result.getString(5);
-                String quantity = result.getString(6);
-                String type = result.getString(7);
-                String sortiment = result.getString(8);
-//                listItem.add(itemName);
-                item_id.add(itemID);
-                item_name.add(itemName);
-                item_desc.add(itemDescription);
-                item_price.add(price);
-                item_sortiment.add(sortiment);
-                item_quantity.add(quantity);
-
-            }
-        }
-    }
     public void getFoodSortiments(){
         Cursor result = myDb.getallFoodSortimentsFromMenu();
         if (result.getCount() == 0) {

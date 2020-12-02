@@ -86,8 +86,8 @@ public class tab2 extends Fragment {
         viewPager=view.findViewById(R.id.menu_viewPagerDrink);
         for (String s:hashSet){
             System.out.println(s);
-            TabLayout.Tab firstTab = tabLayout.newTab(); // Create a new Tab names "First Tab"
-            firstTab.setText(s); // set the Text for the first Tab// set an icon for the first tab
+            TabLayout.Tab firstTab = tabLayout.newTab();
+            firstTab.setText(s);
             tabLayout.addTab(firstTab);
         }
 
@@ -96,7 +96,7 @@ public class tab2 extends Fragment {
         viewPager.setAdapter(pagerAdapter);
 
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
@@ -123,21 +123,6 @@ public class tab2 extends Fragment {
         });
 
 
-
-//        recyclerView=view.findViewById(R.id.menuList);
-////          listView=view.findViewById(R.id.menuList);
-//        myDb = new DatabaseHelper(getContext());
-//        item_id=new ArrayList<>();
-//        item_name=new ArrayList<>();
-//        item_desc=new ArrayList<>();
-//        item_quantity=new ArrayList<>();
-//        item_price=new ArrayList<>();
-//        item_sortiment=new ArrayList<>();
-//        storeDataInArray();
-//        RecyclerView.LayoutManager recyce = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
-//        recyclerView.setLayoutManager(recyce);
-//        customAdapter=new CustomAdapter(getContext(),item_id,item_name,item_desc,item_price,item_quantity,item_sortiment);
-//        recyclerView.setAdapter(customAdapter);
         return view;
     }
     public void showMessage(String title, String  message){
@@ -148,33 +133,7 @@ public class tab2 extends Fragment {
         builder.setMessage(message);
         builder.show();
     }
-    public void storeDataInArray() {
-        int restaurantId = 1; // acum hardcodat da o sa vina in functie de restaurant
-        Cursor result = myDb.getallDrinksFromMenu(restaurantId);
-        if (result.getCount() == 0) {
-            showMessage("Error", "Keine Tupel in der Tabelle");
 
-        } else {
-            while (result.moveToNext()) {
-
-                String itemID = result.getString(2);
-                String itemName = result.getString(3);
-                String itemDescription = result.getString(4);
-                String price = result.getString(5);
-                String quantity = result.getString(6);
-                String type = result.getString(7);
-                String sortiment = result.getString(8);
-//                listItem.add(itemName);
-                item_id.add(itemID);
-                item_name.add(itemName);
-                item_desc.add(itemDescription);
-                item_price.add(price);
-                item_sortiment.add(sortiment);
-                item_quantity.add(quantity);
-
-            }
-        }
-    }
     public void getDrinkSortiments(){
         Cursor result = myDb.getallDrinksSortimentsFromMenu();
         if (result.getCount() == 0) {

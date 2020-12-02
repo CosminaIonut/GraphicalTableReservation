@@ -6,8 +6,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PageAdapter2 extends FragmentPagerAdapter {
     private int numofTabs;
+    private List<Fragment> mFragmentList = new ArrayList<>();
+    private List<String> mFragmentTitleList = new ArrayList<>();
     public PageAdapter2(@NonNull FragmentManager fm, int numofTabs) {
         super(fm);
         this.numofTabs=numofTabs;
@@ -16,10 +21,11 @@ public class PageAdapter2 extends FragmentPagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        switch (position){
-            default:
-                return new AllFood(position);
-        }
+        return mFragmentList.get(position);
+    }
+    public void addFragment(Fragment fragment, String title) {
+        mFragmentList.add(fragment);
+        mFragmentTitleList.add(title);
     }
 
     @Override

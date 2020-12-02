@@ -94,8 +94,6 @@ public class AllFood extends Fragment {
         recyclerView = view.findViewById(R.id.menuList);
         tabLayout = (TabLayout) view.findViewById(R.id.tabLayoutFoodSection);
 
-
-
         RecyclerView.LayoutManager recyce = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(recyce);
         customAdapter = new CustomAdapter(getContext(), item_id, item_name, item_desc, item_price, item_quantity, item_sortiment);

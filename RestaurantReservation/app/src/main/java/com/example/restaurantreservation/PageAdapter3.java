@@ -16,10 +16,7 @@ public class PageAdapter3 extends FragmentPagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        switch (position){
-            default:
-                return new AllDrinkTab(position);
-        }
+        return new AllDrinkTab(position);
     }
 
     @Override
