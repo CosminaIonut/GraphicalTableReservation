@@ -9,29 +9,30 @@
 
     <EditText
         android:id="@+id/fullName"
-        android:layout_width="282dp"
-        android:layout_height="56dp"
+        android:layout_width="312dp"
+        android:layout_height="58dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="37dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="509dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="507dp"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/custom_person_icon"
         android:drawablePadding="12dp"
         android:ems="10"
         android:hint="Full Name "
-        android:singleLine="true"
-         />
+        android:singleLine="true" />
 
     <TextView
         android:id="@+id/date_pick"
-        android:layout_width="282dp"
+        android:layout_width="312dp"
         android:layout_height="56dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="37dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginBottom="340dp"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/custom_date_icon"
@@ -40,43 +41,44 @@
         android:inputType="none"
         android:paddingTop="15dp"
         android:text="Date "
-        android:textSize="20dp"
-         />
+        android:textSize="20dp" />
 
     <com.santalu.maskedittext.MaskEditText
         android:id="@+id/phone"
-        android:layout_width="282dp"
+        android:layout_width="312dp"
         android:layout_height="56dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="37dp"
+        android:layout_marginStart="49dp"
         android:layout_marginTop="244dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginBottom="423dp"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/custom_phone_icon"
         android:drawablePadding="12dp"
         android:ems="10"
-        android:inputType="phone"
         android:hint="Phone Number"
-        app:met_mask="+4##########"
+        android:inputType="phone"
+        android:singleLine="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.463"
-        android:singleLine="true" />
+        app:met_mask="+4##########" />
 
     <TextView
         android:id="@+id/startHour"
-        android:layout_width="282dp"
+        android:layout_width="312dp"
         android:layout_height="56dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="37dp"
+        android:layout_marginStart="49dp"
         android:layout_marginTop="244dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginBottom="261dp"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/custom_time_icon"
@@ -95,13 +97,14 @@
 
     <TextView
         android:id="@+id/endHour"
-        android:layout_width="282dp"
+        android:layout_width="312dp"
         android:layout_height="56dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="37dp"
+        android:layout_marginStart="49dp"
         android:layout_marginTop="244dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginBottom="178dp"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/custom_time_icon"
@@ -120,11 +123,13 @@
 
     <Button
         android:id="@+id/candelbooking"
-        android:layout_width="wrap_content"
+        android:layout_width="142dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="280dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginEnd="222dp"
         android:layout_marginBottom="85dp"
         android:background="@drawable/custom_button"
         android:padding="10dp"
@@ -138,7 +143,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="82dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginBottom="85dp"
         android:background="@drawable/custom_button_solid"
         android:padding="10dp"
@@ -146,7 +151,15 @@
         android:textColor="@android:color/white"
         android:textSize="20dp" />
 
-   
+    <ImageView
+        android:id="@+id/buttonBookingDetails"
+        android:layout_width="match_parent"
+        android:layout_height="154dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-10dp"
+        android:layout_marginTop="-20dp"
+        android:layout_marginEnd="-10dp"
+        app:srcCompat="@drawable/details" />
 
 
 </RelativeLayout>
