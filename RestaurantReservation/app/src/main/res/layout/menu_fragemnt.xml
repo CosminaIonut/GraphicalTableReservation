@@ -1,41 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:textSize="23sp"
-        android:text="Menu Fragment"
-        android:id="@+id/textTitle"
-        android:layout_marginTop="44dp"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/restaurant_fragment"
-        android:text="Go To Restaurant"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/textTitle"
-        android:layout_centerHorizontal="true"/>
-    <Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/menu_fragment"
-    android:text="Go To Menu"
-    android:layout_marginTop="10dp"
-    android:layout_below="@id/restaurant_fragment"
-    android:layout_centerHorizontal="true"/>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <Button
-        android:id="@+id/buttonBookingDetails"
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/restaurant_fragment"
+        android:layout_width="120dp"
+        android:layout_height="114dp"
+        android:layout_below="@+id/titlebkg"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="-6dp"
+        android:layout_marginTop="-2dp"
+        app:srcCompat="@drawable/homebtnactive" />
+
+    <ImageView
+        android:id="@+id/menu_fragment"
+        android:layout_width="120dp"
+        android:layout_height="114dp"
+        android:layout_below="@+id/titlebkg"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="-6dp"
+        app:srcCompat="@drawable/menubtninactive" />
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Book a table"
-        android:layout_below="@id/menu_fragment"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-3dp"
+        android:layout_marginTop="156dp"
+        android:background="@color/colorOrange">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Food" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/drinks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Drinks" />
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <com.example.restaurantreservation.NonSwipeableViewPager
+        android:id="@+id/menu_viewPager"
+        android:layout_width="wrap_content"
+        android:layout_height="459dp"
+        android:layout_below="@+id/tabLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="0dp" />
 
 </RelativeLayout>
