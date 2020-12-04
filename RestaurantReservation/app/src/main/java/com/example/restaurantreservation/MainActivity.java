@@ -1,14 +1,21 @@
 package com.example.restaurantreservation;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     DatabaseHelper myDb;
+    List<RestaurantCard> listRestaurant;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,5 +44,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        listRestaurant =new ArrayList<>();
+        listRestaurant.add(new RestaurantCard("People","muie",R.drawable.res1));
+        listRestaurant.add(new RestaurantCard("Napoli Centrale","muie",R.drawable.res2));
+        listRestaurant.add(new RestaurantCard("Cimbru","muie",R.drawable.res3));
+        listRestaurant.add(new RestaurantCard("Kfc","muie",R.drawable.res4));
+        listRestaurant.add(new RestaurantCard("Mc","muie",R.drawable.res5));
+        listRestaurant.add(new RestaurantCard("People","muie",R.drawable.res1));
+        listRestaurant.add(new RestaurantCard("Napoli Centrale","muie",R.drawable.res2));
+        listRestaurant.add(new RestaurantCard("Cimbru","muie",R.drawable.res3));
+        listRestaurant.add(new RestaurantCard("Kfc","muie",R.drawable.res4));
+        listRestaurant.add(new RestaurantCard("Mc","muie",R.drawable.res5));
+
+        RecyclerView recyclerView=(RecyclerView) findViewById(R.id.recyclerview_id);
+        RecyclerViewAdapter adapter=new RecyclerViewAdapter(this,listRestaurant);
+        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        recyclerView.setAdapter(adapter);
     }
 }

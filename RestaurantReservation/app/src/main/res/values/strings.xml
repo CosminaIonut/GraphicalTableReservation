@@ -2,6 +2,9 @@
     <string name="app_name">RestaurantReservation</string>
     <string name="phonenumber">PhoneNumber</string>
     <string name="fullname">FullName</string>
+    <string name="hello">Hello</string>
+    <string name="john">John</string>
+    <string name="search_elements">Search elements</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
