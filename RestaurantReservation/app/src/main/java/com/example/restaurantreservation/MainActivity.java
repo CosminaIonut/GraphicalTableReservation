@@ -9,6 +9,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.restaurantreservation.DatabaseHelper;
+import com.example.restaurantreservation.LoginActivity;
+import com.example.restaurantreservation.R;
+import com.example.restaurantreservation.RecyclerViewAdapter;
+import com.example.restaurantreservation.RestaurantCard;
+import com.example.restaurantreservation.RestaurantHomePage;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         myDb = new DatabaseHelper(this);
 //        myDb.deleteAllTables();
-        myDb.insertData();
-        myDb.insertFoodDrinks();
-        myDb.insertMenu();
+//        myDb.insertData();
+//        myDb.insertFoodDrinks();
+//        myDb.insertMenu();
         setContentView(R.layout.activity_main);
 
         Button buttonOne = findViewById(R.id.buttonOne);
@@ -44,21 +51,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        listRestaurant =new ArrayList<>();
-//        listRestaurant.add(new RestaurantCard("People","muie",R.drawable.res1));
-//        listRestaurant.add(new RestaurantCard("Napoli Centrale","muie",R.drawable.res2));
-//        listRestaurant.add(new RestaurantCard("Cimbru","muie",R.drawable.res3));
-//        listRestaurant.add(new RestaurantCard("Kfc","muie",R.drawable.res4));
-//        listRestaurant.add(new RestaurantCard("Mc","muie",R.drawable.res5));
-//        listRestaurant.add(new RestaurantCard("People","muie",R.drawable.res1));
-//        listRestaurant.add(new RestaurantCard("Napoli Centrale","muie",R.drawable.res2));
-//        listRestaurant.add(new RestaurantCard("Cimbru","muie",R.drawable.res3));
-//        listRestaurant.add(new RestaurantCard("Kfc","muie",R.drawable.res4));
-//        listRestaurant.add(new RestaurantCard("Mc","muie",R.drawable.res5));
-//
-//        RecyclerView recyclerView=(RecyclerView) findViewById(R.id.recyclerview_id);
-//        RecyclerViewAdapter adapter=new RecyclerViewAdapter(this,listRestaurant);
-//        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
-//        recyclerView.setAdapter(adapter);
+        listRestaurant =new ArrayList<>();
+        listRestaurant.add(new RestaurantCard("People","muie",R.drawable.res1));
+        listRestaurant.add(new RestaurantCard("Napoli Centrale","muie",R.drawable.res2));
+        listRestaurant.add(new RestaurantCard("Cimbru","muie",R.drawable.res3));
+        listRestaurant.add(new RestaurantCard("Kfc","muie",R.drawable.res4));
+        listRestaurant.add(new RestaurantCard("Mc","muie",R.drawable.res5));
+        listRestaurant.add(new RestaurantCard("People","muie",R.drawable.res1));
+        listRestaurant.add(new RestaurantCard("Napoli Centrale","muie",R.drawable.res2));
+        listRestaurant.add(new RestaurantCard("Cimbru","muie",R.drawable.res3));
+        listRestaurant.add(new RestaurantCard("Kfc","muie",R.drawable.res4));
+        listRestaurant.add(new RestaurantCard("Mc","muie",R.drawable.res5));
+
+        RecyclerView recyclerView=(RecyclerView) findViewById(R.id.recyclerview_id);
+        RecyclerViewAdapter adapter=new RecyclerViewAdapter(this,listRestaurant);
+        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        recyclerView.setAdapter(adapter);
     }
 }
