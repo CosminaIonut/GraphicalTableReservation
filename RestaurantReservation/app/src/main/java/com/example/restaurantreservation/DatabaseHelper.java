@@ -232,6 +232,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
                 "Values(22, 1)");
     }
+    public Cursor getallFoodFromMenu(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("select * from " + TABLE_NAME_MENU+ " inner join "+TABLE_NAME_DRINKS_FOOD+" on "+TABLE_NAME_DRINKS_FOOD+".ID="+TABLE_NAME_MENU+".ITEMID where TYPE='Food' and  RID="+ id, null);
+        return result;
+    }
+    public Cursor getallFoodSortimentsFromMenu(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("select distinct SORTIMENT  from " + TABLE_NAME_DRINKS_FOOD+ " where TYPE='Food'", null);
+        return result;
+    }
+    public Cursor getallDrinksFromMenu(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("select * from " + TABLE_NAME_MENU+ " inner join "+TABLE_NAME_DRINKS_FOOD+" on "+TABLE_NAME_DRINKS_FOOD+".ID="+TABLE_NAME_MENU+".ITEMID where TYPE='Drink' and  RID="+ id, null);
+        return result;
+    }
+    public Cursor getallDrinksSortimentsFromMenu(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("select distinct SORTIMENT  from " + TABLE_NAME_DRINKS_FOOD+ " where TYPE='Drink'", null);
+        return result;
+    }
+
+    public Cursor getallDrinkSortiment(int id, String sortiment){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("select * from " + TABLE_NAME_MENU+ " inner join "+TABLE_NAME_DRINKS_FOOD+" on "+TABLE_NAME_DRINKS_FOOD+".ID="+TABLE_NAME_MENU+".ITEMID where TYPE='Drink' and SORTIMENT ='"+sortiment+"' and RID="+ id, null);
+        return result;
+    }
+    public Cursor getallFoodSortiment(int id, String sortiment){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("select * from " + TABLE_NAME_MENU+ " inner join "+TABLE_NAME_DRINKS_FOOD+" on "+TABLE_NAME_DRINKS_FOOD+".ID="+TABLE_NAME_MENU+".ITEMID where TYPE='Food' and SORTIMENT ='"+sortiment+"' and  RID="+ id, null);
+        return result;
+    }
+
 
     public Cursor getAllBooking() {    //Get data from table
 //        insertData();
