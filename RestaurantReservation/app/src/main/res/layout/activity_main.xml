@@ -104,12 +104,20 @@
                 android:contentDescription="@string/app_name"
                 android:padding="6dp"
                 android:src="@drawable/ic_search"
-                app:tint="@color/colorPrimary"/>
+                app:tint="@color/colorWhite"/>
         </LinearLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-    
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_id"
+        android:layout_marginTop="140dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
