@@ -88,8 +88,9 @@ public class AllFood extends Fragment {
         item_price = new ArrayList<>();
         item_sortiment = new ArrayList<>();
         myDb = new DatabaseHelper(getContext());
-
-        storeDataInArray();
+        Bundle extras =getActivity().getIntent().getExtras();
+        int id = Integer.parseInt(extras.getString("RestaurantId"));
+        storeDataInArray(id);
         View view = inflater.inflate(R.layout.fragment_allfood, container, false);
         recyclerView = view.findViewById(R.id.menuList);
         tabLayout = (TabLayout) view.findViewById(R.id.tabLayoutFoodSection);
@@ -101,9 +102,8 @@ public class AllFood extends Fragment {
         return view;
 
     }
-    public void storeDataInArray() {
-        System.out.println("acummmmmmmmmmmmmmmm");
-        int restaurantId = 1; // acum hardcodat da o sa vina in functie de restaurant
+    public void storeDataInArray(int restaurantId ) {
+
         Cursor result =myDb.getallFoodFromMenu(restaurantId);;
         if(position==0){ 
             result = myDb.getallFoodFromMenu(restaurantId);

@@ -56,6 +56,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void insertData() {    //insert in Table
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("Insert  INTO " + TABLE_NAME_RESTAURANT + " (NAME,ADRESS) Values('McTest', 'Str. Paris 23')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_RESTAURANT + " (NAME,ADRESS) Values('Refresh', 'Str. General Magheru 2')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_RESTAURANT + " (NAME,ADRESS) Values('Stories', 'Str. Victor Deleu 1')");
         db.execSQL("Insert  INTO " + TABLE_NAME_MAP + " (PHOTOBG,RID) Values('McTest.jpg', 1)");
         db.execSQL("Insert  INTO " + TABLE_NAME_TABLE + " (X,Y, MAPID) Values(200,100,1)");
         db.execSQL("Insert  INTO " + TABLE_NAME_TABLE + " (X,Y, MAPID) Values(120,230,1)");
@@ -114,10 +116,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else return false;
     }
 
-    public Cursor getAllData() {    //Get data from table
+    public Cursor getAllData(int id) {    //Get data from table
 //        insertData();
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor result = db.rawQuery("select * from " + TABLE_NAME_TABLE, null);
+        Cursor result = db.rawQuery("select * from " + TABLE_NAME_TABLE+ " where MAPID="+id, null);
         return result;
 
     }
@@ -282,6 +284,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor getAllRestaurants(){
         SQLiteDatabase db=this.getWritableDatabase();
         Cursor result=db.rawQuery("select * from "+TABLE_NAME_RESTAURANT,null);
+        return result;
+    }
+    public Cursor getSearchRestaurant(String text){
+        System.out.println("In SEARCH-----------------------------");
+        SQLiteDatabase db=this.getWritableDatabase();
+        Cursor result=db.rawQuery("select * from "+TABLE_NAME_RESTAURANT+ " where NAME like '%"+text +"%'",null);
         return result;
     }
 

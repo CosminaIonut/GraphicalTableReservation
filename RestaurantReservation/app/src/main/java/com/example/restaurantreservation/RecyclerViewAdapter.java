@@ -1,6 +1,7 @@
 package com.example.restaurantreservation;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,12 +27,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private Context mContext;
     ArrayList rest_id,rest_name,rest_adress, rest_thumbnail;
-    private List<RestaurantCard> mData;
-
-//    public RecyclerViewAdapter(Context myContext, List<RestaurantCard> mData) {
-//        this.mContext = myContext;
-//        this.mData = mData;
-//    }
 
     @NonNull
     @Override
@@ -43,14 +38,20 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
 
         holder.rest_name.setText(String.valueOf(rest_name.get(position)));
         holder.iv_restaurant_image.setImageResource((int) rest_thumbnail.get(position));
+        holder.rest_adress.setText(String.valueOf(rest_adress.get(position)));
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent restaurantHomeActivity = new Intent(mContext, RestaurantHomePage.class);
+                restaurantHomeActivity.putExtra("RestaurantId", String.valueOf(rest_id.get(position)));
+                restaurantHomeActivity.putExtra("RestaurantName", String.valueOf(rest_name.get(position)));
+                restaurantHomeActivity.putExtra("RestaurantAdress", String.valueOf(rest_adress.get(position)));
+                mContext.startActivity(restaurantHomeActivity);
 
             }
         });
@@ -64,7 +65,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView tv_restaurant_title,rest_id,rest_name,rest_adress;
+        TextView rest_id,rest_name,rest_adress;
         ImageView iv_restaurant_image;
         CardView cardView;
 
@@ -74,7 +75,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             rest_name=itemView.findViewById(R.id.restaurant_title_id);
             rest_adress=itemView.findViewById(R.id.restaurant_adress_id);
 
-            //tv_restaurant_title=(TextView) itemView.findViewById(R.id.restaurant_title_id);
             iv_restaurant_image=(ImageView) itemView.findViewById(R.id.restaurant_iamge_id);
             cardView=(CardView)itemView.findViewById(R.id.cardViewId);
         }

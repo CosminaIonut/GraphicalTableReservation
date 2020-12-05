@@ -22,7 +22,7 @@
             android:layout_height="1920dp"
             android:rotation="0"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/refresh" />
+            />
 
 
     </RelativeLayout>

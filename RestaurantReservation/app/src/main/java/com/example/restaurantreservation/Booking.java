@@ -37,6 +37,8 @@ public class Booking extends AppCompatActivity implements DatePickerDialog.OnDat
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Bundle extras =getIntent().getExtras();
+        final int id = Integer.parseInt(extras.getString("RestaurantID"));
         setContentView(R.layout.activity_booking);
         datePick = (TextView) findViewById(R.id.date_pick);
         startH = (TextView) findViewById(R.id.startHour);
@@ -83,6 +85,7 @@ public class Booking extends AppCompatActivity implements DatePickerDialog.OnDat
                     tableActivity.putExtra("date", String.valueOf(datePick.getText()));
                     tableActivity.putExtra("startH", String.valueOf(startH.getText()));
                     tableActivity.putExtra("endH", String.valueOf(endH.getText()));
+                    tableActivity.putExtra("RestaurantID",String.valueOf(id));
                     startActivity(tableActivity);
                 } else {
                     if (endM == 0 || endHo == 0 || startHo == 0 || startM == 0 || TextUtils.isEmpty(phone.getText()) || TextUtils.isEmpty(fullName.getText())) {

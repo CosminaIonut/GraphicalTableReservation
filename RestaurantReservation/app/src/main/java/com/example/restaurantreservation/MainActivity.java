@@ -8,8 +8,11 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.restaurantreservation.DatabaseHelper;
 import com.example.restaurantreservation.LoginActivity;
@@ -28,14 +31,26 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> restaurant_adress= new ArrayList<>();
     ArrayList<Integer> restaurant_thumnail = new ArrayList<>();;
     String photoString="rest";
+    EditText searchBar;
     List<RestaurantCard> listRestaurant;
 
-    public void storeDataInArray(){
-        Cursor result=myDb.getAllRestaurants();
+    public void storeDataInArray(String searchText){
+        restaurant_adress.clear();
+        restaurant_id.clear();
+        restaurant_name.clear();
+        restaurant_thumnail.clear();
+        Cursor result;
+        if(searchText.length()==0){
+         result= myDb.getAllRestaurants();
+        }else{
+            result= myDb.getSearchRestaurant(searchText);
+        }
+
         if(result.getCount()==0){
-            showMessage("Error", "Keine Tupel in der Tabelle");
+
         }else{
             while (result.moveToNext()){
+                photoString="rest";
                 String restId=result.getString(0);
                 String restName=result.getString(1);
                 String restAdress=result.getString(2);
@@ -61,22 +76,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         myDb = new DatabaseHelper(this);
 //        myDb.deleteAllTables();
 //        myDb.insertData();
 //        myDb.insertFoodDrinks();
 //        myDb.insertMenu();
         setContentView(R.layout.activity_main);
-
-        Button buttonOne = findViewById(R.id.buttonOne);
-        buttonOne.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                System.out.println("Button Clicked");
-
-                Intent mapActivity = new Intent(getApplicationContext(), RestaurantHomePage.class);
-                startActivity(mapActivity);
-            }
-        });
+        searchBar=findViewById(R.id.search);
+        final Cursor result = myDb.getAllRestaurants();
         Button button=findViewById(R.id.buttonLogin);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -85,23 +93,33 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(loginActivity);
             }
         });
-
-//        listRestaurant =new ArrayList<>();
-//        listRestaurant.add(new RestaurantCard("People","m",R.drawable.rest1));
-//        listRestaurant.add(new RestaurantCard("Napoli Centrale","m",R.drawable.rest2));
-//        listRestaurant.add(new RestaurantCard("Cimbru","m",R.drawable.rest3));
-//        listRestaurant.add(new RestaurantCard("Kfc","m",R.drawable.rest4));
-//        listRestaurant.add(new RestaurantCard("Mc","m",R.drawable.res5));
-//        listRestaurant.add(new RestaurantCard("People","m",R.drawable.rest1));
-//        listRestaurant.add(new RestaurantCard("Napoli Centrale","m",R.drawable.rest2));
-//        listRestaurant.add(new RestaurantCard("Cimbru","m",R.drawable.rest3));
-//        listRestaurant.add(new RestaurantCard("Kfc","m",R.drawable.rest4));
-//        listRestaurant.add(new RestaurantCard("Mc","m",R.drawable.res5));
-        storeDataInArray();
-
-        RecyclerView recyclerView=(RecyclerView) findViewById(R.id.recyclerview_id);
+        storeDataInArray("");
+        final RecyclerView recyclerView=(RecyclerView) findViewById(R.id.recyclerview_id);
         RecyclerViewAdapter adapter=new RecyclerViewAdapter(this,restaurant_id,restaurant_name,restaurant_adress, restaurant_thumnail);
         recyclerView.setLayoutManager(new GridLayoutManager(this,2));
         recyclerView.setAdapter(adapter);
+
+        searchBar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                    storeDataInArray(charSequence.toString());
+                    RecyclerViewAdapter  adapter2=new RecyclerViewAdapter(getBaseContext(),restaurant_id,restaurant_name,restaurant_adress, restaurant_thumnail);
+                    recyclerView.setAdapter(adapter2);
+
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
     }
 }

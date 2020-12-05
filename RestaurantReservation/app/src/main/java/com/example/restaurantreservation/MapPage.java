@@ -27,10 +27,18 @@ import java.util.Date;
 public class MapPage extends AppCompatActivity {
     DatabaseHelper myDb;
     Dialog dialog;
+    ImageView restaurantmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_map_page);
+        restaurantmap= findViewById(R.id.imageView2);
+        Bundle extras =getIntent().getExtras();
+        int idR = Integer.parseInt(extras.getString("RestaurantID"));
+        String mdrawable="map"+idR;
+        final int res = getResources().getIdentifier(mdrawable , "drawable", getPackageName());
+        restaurantmap.setImageResource(res);
         int x=0;
         int y=0;
         int id=0;
@@ -41,11 +49,11 @@ public class MapPage extends AppCompatActivity {
         final String[] convertedDate = new String[1];
         final String[] convertedStartTime = new String[1];
         final String[] convertedEndTime = new String[1];
-        setContentView(R.layout.activity_map_page);
+
         myDb = new DatabaseHelper(this);
-        myDb.getAllData();
-        Cursor result = myDb.getAllData();
-        Bundle extras =getIntent().getExtras();
+        myDb.getAllData(idR);
+        Cursor result = myDb.getAllData(idR);
+//        Bundle extras =getIntent().getExtras();
         final String Phone =extras.getString("phone");
         final String Fullname =extras.getString("fullname");
         String Date =extras.getString("date");

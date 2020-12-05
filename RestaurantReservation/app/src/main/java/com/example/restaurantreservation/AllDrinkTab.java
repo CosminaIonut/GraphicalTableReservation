@@ -85,7 +85,10 @@ public class AllDrinkTab extends Fragment {
         item_price = new ArrayList<>();
         item_sortiment = new ArrayList<>();
         myDb = new DatabaseHelper(getContext());
-        storeDataInArray();
+        Bundle extras =getActivity().getIntent().getExtras();
+        int id = Integer.parseInt(extras.getString("RestaurantId"));
+        System.out.println(id+ "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
+        storeDataInArray(id);
         View view = inflater.inflate(R.layout.fragment_all_drink_tab, container, false);
         recyclerView = view.findViewById(R.id.menuListDrink);
         tabLayout = (TabLayout) view.findViewById(R.id.tabLayoutDrinkSection);
@@ -97,9 +100,9 @@ public class AllDrinkTab extends Fragment {
         return view;
     }
 
-    public void storeDataInArray() {
-        System.out.println("resullllllllllllllllllllllllllllll");
-        int restaurantId = 1; // acum hardcodat da o sa vina in functie de restaurant
+    public void storeDataInArray(int restaurantId) {
+
+//        int restaurantId = 1; // acum hardcodat da o sa vina in functie de restaurant
         Cursor result = myDb.getallDrinksFromMenu(restaurantId);
         ;
         if (position == 0) {

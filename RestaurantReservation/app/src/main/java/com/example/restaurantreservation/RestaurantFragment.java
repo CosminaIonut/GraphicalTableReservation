@@ -18,12 +18,20 @@ public class RestaurantFragment extends Fragment {
     private ImageView btnNavFrgMenu;
     private ImageView btnNavFrgRestaurant;
     private ImageView btnNavBookingActivity;
+    private ImageView map;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 //        return super.onCreateView(inflater, container, savedInstanceState);
           View view = inflater.inflate(R.layout.restaurant_fragment, container, false);
+          map=view.findViewById(R.id.imageView6);
+          Bundle extras =getActivity().getIntent().getExtras();
+          final int id = Integer.parseInt(extras.getString("RestaurantId"));
+
+          String mdrawable="restaurantmap"+id;
+          final int resID = getResources().getIdentifier(mdrawable , "drawable", getActivity().getPackageName());
+          map.setImageResource(resID);
           btnNavFrgMenu= view.findViewById(R.id.menu_fragment);
           btnNavFrgRestaurant= view.findViewById(R.id.restaurant_fragment);
           btnNavBookingActivity=view.findViewById(R.id.buttonBookingDetails);
@@ -46,6 +54,7 @@ public class RestaurantFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity() , Booking.class);
+                intent.putExtra("RestaurantID",String.valueOf(id));
                 startActivity(intent);
             }
           });
