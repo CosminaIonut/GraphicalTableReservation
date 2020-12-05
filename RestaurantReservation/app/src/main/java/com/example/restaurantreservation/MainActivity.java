@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +23,40 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     DatabaseHelper myDb;
+    ArrayList<String> restaurant_id= new ArrayList<>();
+    ArrayList<String> restaurant_name= new ArrayList<>();
+    ArrayList<String> restaurant_adress= new ArrayList<>();
+    ArrayList<Integer> restaurant_thumnail = new ArrayList<>();;
+    String photoString="rest";
     List<RestaurantCard> listRestaurant;
+
+    public void storeDataInArray(){
+        Cursor result=myDb.getAllRestaurants();
+        if(result.getCount()==0){
+            showMessage("Error", "Keine Tupel in der Tabelle");
+        }else{
+            while (result.moveToNext()){
+                String restId=result.getString(0);
+                String restName=result.getString(1);
+                String restAdress=result.getString(2);
+
+                restaurant_id.add(restId);
+                restaurant_name.add(restName);
+                restaurant_adress.add(restAdress);
+                photoString+=restId;
+                int photoid =getResources().getIdentifier(photoString, "drawable",getPackageName());
+                restaurant_thumnail.add(photoid);
+            }
+        }
+    }
+    public void showMessage(String title, String  message){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder. setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.show();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,20 +86,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        listRestaurant =new ArrayList<>();
-        listRestaurant.add(new RestaurantCard("People","muie",R.drawable.res1));
-        listRestaurant.add(new RestaurantCard("Napoli Centrale","muie",R.drawable.res2));
-        listRestaurant.add(new RestaurantCard("Cimbru","muie",R.drawable.res3));
-        listRestaurant.add(new RestaurantCard("Kfc","muie",R.drawable.res4));
-        listRestaurant.add(new RestaurantCard("Mc","muie",R.drawable.res5));
-        listRestaurant.add(new RestaurantCard("People","muie",R.drawable.res1));
-        listRestaurant.add(new RestaurantCard("Napoli Centrale","muie",R.drawable.res2));
-        listRestaurant.add(new RestaurantCard("Cimbru","muie",R.drawable.res3));
-        listRestaurant.add(new RestaurantCard("Kfc","muie",R.drawable.res4));
-        listRestaurant.add(new RestaurantCard("Mc","muie",R.drawable.res5));
+//        listRestaurant =new ArrayList<>();
+//        listRestaurant.add(new RestaurantCard("People","m",R.drawable.rest1));
+//        listRestaurant.add(new RestaurantCard("Napoli Centrale","m",R.drawable.rest2));
+//        listRestaurant.add(new RestaurantCard("Cimbru","m",R.drawable.rest3));
+//        listRestaurant.add(new RestaurantCard("Kfc","m",R.drawable.rest4));
+//        listRestaurant.add(new RestaurantCard("Mc","m",R.drawable.res5));
+//        listRestaurant.add(new RestaurantCard("People","m",R.drawable.rest1));
+//        listRestaurant.add(new RestaurantCard("Napoli Centrale","m",R.drawable.rest2));
+//        listRestaurant.add(new RestaurantCard("Cimbru","m",R.drawable.rest3));
+//        listRestaurant.add(new RestaurantCard("Kfc","m",R.drawable.rest4));
+//        listRestaurant.add(new RestaurantCard("Mc","m",R.drawable.res5));
+        storeDataInArray();
 
         RecyclerView recyclerView=(RecyclerView) findViewById(R.id.recyclerview_id);
-        RecyclerViewAdapter adapter=new RecyclerViewAdapter(this,listRestaurant);
+        RecyclerViewAdapter adapter=new RecyclerViewAdapter(this,restaurant_id,restaurant_name,restaurant_adress, restaurant_thumnail);
         recyclerView.setLayoutManager(new GridLayoutManager(this,2));
         recyclerView.setAdapter(adapter);
     }

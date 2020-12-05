@@ -279,5 +279,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("Delete FROM " + TABLE_NAME_TABLE);
     }
 
+    public Cursor getAllRestaurants(){
+        SQLiteDatabase db=this.getWritableDatabase();
+        Cursor result=db.rawQuery("select * from "+TABLE_NAME_RESTAURANT,null);
+        return result;
+    }
+
 
 }

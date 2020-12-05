@@ -11,17 +11,27 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
+    public RecyclerViewAdapter(Context mContext, ArrayList rest_id, ArrayList rest_name, ArrayList rest_adress, ArrayList rest_thumbnail) {
+        this.mContext = mContext;
+        this.rest_id = rest_id;
+        this.rest_name = rest_name;
+        this.rest_adress = rest_adress;
+        this.rest_thumbnail=rest_thumbnail;
+    }
+
     private Context mContext;
+    ArrayList rest_id,rest_name,rest_adress, rest_thumbnail;
     private List<RestaurantCard> mData;
 
-    public RecyclerViewAdapter(Context myContext, List<RestaurantCard> mData) {
-        this.mContext = myContext;
-        this.mData = mData;
-    }
+//    public RecyclerViewAdapter(Context myContext, List<RestaurantCard> mData) {
+//        this.mContext = myContext;
+//        this.mData = mData;
+//    }
 
     @NonNull
     @Override
@@ -35,8 +45,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        holder.tv_restaurant_title.setText(mData.get(position).getTitle());
-        holder.iv_restaurant_image.setImageResource(mData.get(position).getThumbnail());
+
+        holder.rest_name.setText(String.valueOf(rest_name.get(position)));
+        holder.iv_restaurant_image.setImageResource((int) rest_thumbnail.get(position));
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,19 +59,22 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public int getItemCount() {
-        return mData.size();
+        return rest_id.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView tv_restaurant_title;
+        TextView tv_restaurant_title,rest_id,rest_name,rest_adress;
         ImageView iv_restaurant_image;
         CardView cardView;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tv_restaurant_title=(TextView) itemView.findViewById(R.id.restaurant_title_id);
+            rest_name=itemView.findViewById(R.id.restaurant_title_id);
+            rest_adress=itemView.findViewById(R.id.restaurant_adress_id);
+
+            //tv_restaurant_title=(TextView) itemView.findViewById(R.id.restaurant_title_id);
             iv_restaurant_image=(ImageView) itemView.findViewById(R.id.restaurant_iamge_id);
             cardView=(CardView)itemView.findViewById(R.id.cardViewId);
         }

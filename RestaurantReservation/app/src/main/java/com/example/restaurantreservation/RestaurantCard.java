@@ -3,12 +3,12 @@ package com.example.restaurantreservation;
 public class RestaurantCard {
 
     private String title;
-    private String category;
+    private String adress;
     private int thumbnail;
 
-    public RestaurantCard(String title, String category, int thumbnail) {
+    public RestaurantCard(String title, String adress, int thumbnail) {
         this.title = title;
-        this.category = category;
+        this.adress = adress;
         this.thumbnail = thumbnail;
     }
 
@@ -25,12 +25,12 @@ public class RestaurantCard {
         this.title = title;
     }
 
-    public String getCategory() {
-        return category;
+    public String getAdress() {
+        return adress;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setAdress(String adress) {
+        this.adress = adress;
     }
 
     public int getThumbnail() {

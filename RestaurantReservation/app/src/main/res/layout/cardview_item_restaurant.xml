@@ -19,7 +19,7 @@
         <ImageView
             android:id="@+id/restaurant_iamge_id"
             android:layout_width="match_parent"
-            android:layout_height="125dp"
+            android:layout_height="106dp"
             android:scaleType="centerCrop"
             android:background="#2d2d2d"/>
 
@@ -29,8 +29,21 @@
             android:textSize="13sp"
             android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="22dp"
             android:text="Restaurant Name"/>
+
+        <TextView
+            android:id="@+id/restaurant_adress_id"
+            android:textColor="#2d2d2d"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:text="Adress" />
+
     </LinearLayout>
+
+
+
 
 </androidx.cardview.widget.CardView>
