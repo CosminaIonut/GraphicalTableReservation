@@ -34,12 +34,16 @@ public class MainActivity extends AppCompatActivity {
     EditText searchBar;
     List<RestaurantCard> listRestaurant;
 
+    /*
+    * Adds restaurant data from db to the info arrays.
+    * */
     public void storeDataInArray(String searchText){
         restaurant_adress.clear();
         restaurant_id.clear();
         restaurant_name.clear();
         restaurant_thumnail.clear();
         Cursor result;
+
         if(searchText.length()==0){
          result= myDb.getAllRestaurants();
         }else{
@@ -64,10 +68,10 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-    public void showMessage(String title, String  message){
 
+    public void showMessage(String title, String  message){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder. setCancelable(true);
+        builder.setCancelable(true);
         builder.setTitle(title);
         builder.setMessage(message);
         builder.show();
@@ -82,6 +86,13 @@ public class MainActivity extends AppCompatActivity {
 //        myDb.insertData();
 //        myDb.insertFoodDrinks();
 //        myDb.insertMenu();
+//        myDb.deleteAllRestaurants();
+//        myDb.insertMoarRestaurants();
+
+        // restaurant 2 stuff
+        //myDb.insertData();
+        //myDb.insertMapToRestaurant();
+
         setContentView(R.layout.activity_main);
         searchBar=findViewById(R.id.search);
         final Cursor result = myDb.getAllRestaurants();
@@ -102,22 +113,15 @@ public class MainActivity extends AppCompatActivity {
         searchBar.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             }
-
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                     storeDataInArray(charSequence.toString());
                     RecyclerViewAdapter  adapter2=new RecyclerViewAdapter(getBaseContext(),restaurant_id,restaurant_name,restaurant_adress, restaurant_thumnail);
                     recyclerView.setAdapter(adapter2);
-
-
-
             }
-
             @Override
             public void afterTextChanged(Editable editable) {
-
             }
         });
 
