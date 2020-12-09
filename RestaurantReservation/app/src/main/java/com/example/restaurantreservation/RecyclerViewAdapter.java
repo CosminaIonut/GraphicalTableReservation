@@ -48,7 +48,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             @Override
             public void onClick(View v) {
                 Intent restaurantHomeActivity = new Intent(mContext, RestaurantHomePage.class);
-                restaurantHomeActivity.putExtra("RestaurantId", String.valueOf(rest_id.get(position)));
+                restaurantHomeActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                restaurantHomeActivity.putExtra("RestaurantID", String.valueOf(rest_id.get(position)));
                 restaurantHomeActivity.putExtra("RestaurantName", String.valueOf(rest_name.get(position)));
                 restaurantHomeActivity.putExtra("RestaurantAdress", String.valueOf(rest_adress.get(position)));
                 mContext.startActivity(restaurantHomeActivity);

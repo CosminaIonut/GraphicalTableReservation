@@ -3,12 +3,16 @@ package com.example.restaurantreservation;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.prefs.PreferenceChangeEvent;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -33,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.passwordTextLoginPage);
         go = (ImageButton) findViewById(R.id.goButtonLoginPage);
         db = new DatabaseHelper(this);
-
+        final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +49,11 @@ public class LoginActivity extends AppCompatActivity {
                     Boolean checkCredentials = db.checkCredentials(email_, pass);
                     if (checkCredentials) {
                         Toast.makeText(LoginActivity.this, "Sign in succesfully!", Toast.LENGTH_SHORT).show();
+                        String name= db.getName(email_);
+                        SharedPreferences.Editor edit= preferences.edit();
+                        edit.putString("pref_USERNAME",email_);
+                        edit.putString("pref_NAME",name);
+                        edit.commit();
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
                     } else {

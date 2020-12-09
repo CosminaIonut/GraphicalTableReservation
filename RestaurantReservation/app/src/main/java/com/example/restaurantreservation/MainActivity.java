@@ -6,13 +6,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.restaurantreservation.DatabaseHelper;
 import com.example.restaurantreservation.LoginActivity;
@@ -32,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Integer> restaurant_thumnail = new ArrayList<>();;
     String photoString="rest";
     EditText searchBar;
+    TextView helloText;
+    ImageView imageLogin;
     List<RestaurantCard> listRestaurant;
 
     /*
@@ -69,13 +76,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void showMessage(String title, String  message){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(message);
-        builder.show();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,16 +94,53 @@ public class MainActivity extends AppCompatActivity {
         //myDb.insertMapToRestaurant();
 
         setContentView(R.layout.activity_main);
+        helloText= findViewById(R.id.textUsername);
+        imageLogin= findViewById(R.id.imageMenu);
+        final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        final String pref_email = preferences.getString("pref_USERNAME", "");
+        String name = "";
+
+        if (pref_email.equals("")){
+            String mdrawable="loginbtn";
+            final int resID = getResources().getIdentifier(mdrawable , "drawable", getPackageName());
+            imageLogin.setImageResource(resID);
+            imageLogin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent loginActivity = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(loginActivity);
+                }
+            });
+
+        }else{
+
+            String mdrawable="logoutbtn";
+            final int resID = getResources().getIdentifier(mdrawable , "drawable", getPackageName());
+
+            name= myDb.getName(pref_email);
+            SharedPreferences.Editor edit= preferences.edit();
+            edit.putString("pref_NAME",name);
+            edit.commit();
+            imageLogin.setImageResource(resID);
+            imageLogin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    SharedPreferences.Editor edit= preferences.edit();
+                    edit.putString("pref_USERNAME","");
+                    edit.commit();
+                    finish();
+                    startActivity(getIntent());
+                }
+            });
+
+
+        }
+
+        helloText.setText(name);
         searchBar=findViewById(R.id.search);
+
         final Cursor result = myDb.getAllRestaurants();
-        Button button=findViewById(R.id.buttonLogin);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                System.out.println("Button Clicked");
-                Intent loginActivity = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(loginActivity);
-            }
-        });
+
         storeDataInArray("");
         final RecyclerView recyclerView=(RecyclerView) findViewById(R.id.recyclerview_id);
         RecyclerViewAdapter adapter=new RecyclerViewAdapter(this,restaurant_id,restaurant_name,restaurant_adress, restaurant_thumnail);

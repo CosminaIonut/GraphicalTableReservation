@@ -265,6 +265,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else return false;
     }
 
+    public String getName(String email){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from " + TABLE_NAME_USERS + " where email='"+email +"'", null);
+        cursor.moveToNext();
+        return cursor.getString(0);
+    }
+
+
     /////       MENU FUNCTIONS      ////////////////////////////////////////////////////////////////
     // WARNING: BIG inserts. And when I say BIG, I mean BIG.
 

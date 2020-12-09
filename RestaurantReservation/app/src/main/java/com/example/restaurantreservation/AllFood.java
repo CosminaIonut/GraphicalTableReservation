@@ -89,8 +89,9 @@ public class AllFood extends Fragment {
         item_sortiment = new ArrayList<>();
         myDb = new DatabaseHelper(getContext());
         Bundle extras =getActivity().getIntent().getExtras();
-        int id = Integer.parseInt(extras.getString("RestaurantId"));
+        int id = Integer.parseInt(extras.getString("RestaurantID" +""));
         storeDataInArray(id);
+
         View view = inflater.inflate(R.layout.fragment_allfood, container, false);
         recyclerView = view.findViewById(R.id.menuList);
         tabLayout = (TabLayout) view.findViewById(R.id.tabLayoutFoodSection);

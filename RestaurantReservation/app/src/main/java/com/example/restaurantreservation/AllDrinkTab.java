@@ -86,7 +86,7 @@ public class AllDrinkTab extends Fragment {
         item_sortiment = new ArrayList<>();
         myDb = new DatabaseHelper(getContext());
         Bundle extras =getActivity().getIntent().getExtras();
-        int id = Integer.parseInt(extras.getString("RestaurantId"));
+        int id = Integer.parseInt(extras.getString("RestaurantID"));
         System.out.println(id+ "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
         storeDataInArray(id);
         View view = inflater.inflate(R.layout.fragment_all_drink_tab, container, false);

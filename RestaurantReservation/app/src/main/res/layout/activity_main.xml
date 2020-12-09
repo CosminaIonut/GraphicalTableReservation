@@ -6,15 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="350dp"
-        android:text="Login Page"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutHeader"
@@ -49,14 +41,13 @@
             app:layout_constraintStart_toEndOf="@+id/textHello"
             app:layout_constraintTop_toTopOf="parent"/>
 
+
         <ImageView
             android:id="@+id/imageMenu"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
             android:layout_marginEnd="15dp"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_menu"
-            app:tint="@color/colorWhite"
             app:layout_constraintBottom_toBottomOf="@id/textHello"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/textHello"/>

@@ -22,7 +22,7 @@ public class RestaurantHomePage extends AppCompatActivity {
         setContentView(R.layout.activity_restaurant_home_page);
 
         Bundle extras = getIntent().getExtras();
-        int id = Integer.parseInt(extras.getString("RestaurantId"));
+        int id = Integer.parseInt(extras.getString("RestaurantID"));
         String name = extras.getString("RestaurantName");
 
         getWindow().getDecorView().setBackgroundColor(Color.WHITE);

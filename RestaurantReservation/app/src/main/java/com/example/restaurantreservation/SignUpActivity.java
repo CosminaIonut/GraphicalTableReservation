@@ -3,7 +3,9 @@ package com.example.restaurantreservation;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -34,7 +36,7 @@ public class SignUpActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.passwordTextSignUpPage);
         go = (ImageButton) findViewById(R.id.goButtonSignUpPage);
         db = new DatabaseHelper(this);
-
+        final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +52,10 @@ public class SignUpActivity extends AppCompatActivity {
                         Boolean insert = db.insertUser(name_, email_, pass);
                         if (insert) {
                             Toast.makeText(SignUpActivity.this, "Registered successfully", Toast.LENGTH_SHORT).show();
+                            SharedPreferences.Editor edit= preferences.edit();
+                            edit.putString("pref_USERNAME",email_);
+                            edit.putString("pref_NAME", name_);
+                            edit.commit();
                             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                             startActivity(intent);
                         } else {
