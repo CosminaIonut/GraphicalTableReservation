@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
         // restaurant 2 stuff
         //myDb.insertData();
-        //myDb.insertMapToRestaurant();
+//        myDb.insertMapToRestaurant();
 
         setContentView(R.layout.activity_main);
         helloText= findViewById(R.id.textUsername);
