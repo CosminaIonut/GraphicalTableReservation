@@ -45,6 +45,7 @@ public class RestaurantHomePage extends AppCompatActivity {
         SectionStatePagerAdapter adapter= new SectionStatePagerAdapter(getSupportFragmentManager(), BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         adapter.addFragemnt(new RestaurantFragment(), "RestaurantFragemnt");
         adapter.addFragemnt(new MenuFragment(), "MenuFragemnt");
+        viewPager.setPageTransformer(false, new FadePageTransformer());
         viewPager.setAdapter(adapter);
     }
 
@@ -55,6 +56,19 @@ public class RestaurantHomePage extends AppCompatActivity {
         mViewPager.setCurrentItem(fragemntNumber);
     }
 
+    public class FadePageTransformer implements ViewPager.PageTransformer {
+        public void transformPage(View view, float position) {
+            view.setTranslationX(view.getWidth() * -position);
 
+            if(position <= -1.0F || position >= 1.0F) {
+                view.setAlpha(0.0F);
+            } else if( position == 0.0F ) {
+                view.setAlpha(1.0F);
+            } else {
+                // position is between -1.0F & 0.0F OR 0.0F & 1.0F
+                view.setAlpha(1.0F - Math.abs(position));
+            }
+        }
+    }
 
 }
