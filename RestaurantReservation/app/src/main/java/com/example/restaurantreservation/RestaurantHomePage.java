@@ -45,7 +45,7 @@ public class RestaurantHomePage extends AppCompatActivity {
         SectionStatePagerAdapter adapter= new SectionStatePagerAdapter(getSupportFragmentManager(), BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         adapter.addFragemnt(new RestaurantFragment(), "RestaurantFragemnt");
         adapter.addFragemnt(new MenuFragment(), "MenuFragemnt");
-        viewPager.setPageTransformer(false, new FadePageTransformer());
+        //viewPager.setPageTransformer(false, new FadePageTransformer());
         viewPager.setAdapter(adapter);
     }
 

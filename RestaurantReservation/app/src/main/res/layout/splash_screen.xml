@@ -9,15 +9,17 @@
 
     <ImageView
         android:id="@+id/imageViewSplash"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="355dp"
+        android:layout_height="315dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="10dp"
-        android:src="@drawable/splashvideoo"
+        android:contentDescription="splashlogo"
+        android:src="@drawable/splash2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/splash2"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -26,8 +28,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="65dp"
         android:fontFamily="@font/bangers"
-        android:text="BookIT"
+        android:text="Book IT"
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
         android:textSize="70sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,6 +44,7 @@
         android:fontFamily="@font/antic"
         android:text="Graphical Table Reservation for Restaurants App"
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"

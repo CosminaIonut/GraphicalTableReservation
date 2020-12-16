@@ -1,5 +1,6 @@
 package com.example.restaurantreservation;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
@@ -35,10 +36,14 @@ public class Booking extends AppCompatActivity implements DatePickerDialog.OnDat
     TextView datePick,startH,endH;
     EditText fullName;
     MaskEditText phone;
+    public static Activity book;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        book = this;
+
         Bundle extras =getIntent().getExtras();
         final int id = Integer.parseInt(extras.getString("RestaurantID"));
         setContentView(R.layout.activity_booking);
@@ -114,6 +119,7 @@ public class Booking extends AppCompatActivity implements DatePickerDialog.OnDat
             public void onClick(View view) {
                 Intent restaurantHome = new Intent(getApplicationContext(), RestaurantHomePage.class);
                 restaurantHome.putExtra("RestaurantID", String.valueOf(id));
+                finish();
                 startActivity(restaurantHome);
             }
         });

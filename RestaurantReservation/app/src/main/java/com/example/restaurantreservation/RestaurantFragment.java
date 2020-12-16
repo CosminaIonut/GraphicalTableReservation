@@ -77,7 +77,9 @@ public class RestaurantFragment extends Fragment {
                 }else{
                     Intent intent = new Intent(getActivity() , Booking.class);
                     intent.putExtra("RestaurantID",String.valueOf(id));
+                    getActivity().finish();
                     startActivity(intent);
+
                 }
 
             }

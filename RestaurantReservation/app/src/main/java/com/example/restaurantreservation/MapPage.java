@@ -3,8 +3,10 @@ package com.example.restaurantreservation;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -28,11 +30,26 @@ public class MapPage extends AppCompatActivity {
     DatabaseHelper myDb;
     Dialog dialog;
     ImageView restaurantmap;
+    ImageView homeBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_page);
+
+        homeBtn = findViewById(R.id.homeBtn);
+
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent homeActivity = new Intent(getApplicationContext(), MainActivity.class);
+                finish();
+                startActivity(homeActivity);
+                Booking.book.finish();
+                MainActivity.main.finish();
+            }
+        });
 
         Bundle extras =getIntent().getExtras();
         int idR = Integer.parseInt(extras.getString("RestaurantID"));

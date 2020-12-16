@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     TextView helloText;
     ImageView imageLogin;
     List<RestaurantCard> listRestaurant;
+    public static Activity main;
 
     /*
     * Adds restaurant data from db to the info arrays.
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        main = this;
 
         myDb = new DatabaseHelper(this);
 //        myDb.deleteAllTables();
