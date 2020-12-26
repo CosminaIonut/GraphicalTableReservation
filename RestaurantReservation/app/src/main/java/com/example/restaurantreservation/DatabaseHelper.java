@@ -311,6 +311,100 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
                 "Values('Mint lemonade', ' ', 14,'350ml','Drink','Fresh & Lemonade')");
         db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Gin Tonic', 'Beefeater 24, Schweppes Kinley', 23,'300ml','Drink','Gin')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Tanqueray Rangpur', ' ', 17,'40ml','Drink','Gin')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Brockmans', ' ', 25,'40ml','Drink','Gin')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Gin Mare', ' ', 25,'40ml','Drink','Gin')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Hendriks', ' ', 18,'40ml','Drink','Gin')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Monkey 47', ' ', 20,'40ml','Drink','Gin')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Old Fashioned Rum', 'Diplomatico Mantuano, bitter plum, banana liquor, brown sugar', 25,'210ml','Drink','Cocktail')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Moscow Muler', 'Absolut Blue, ginger beer, lime', 25,'210ml','Drink','Cocktail')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Old Fashioned Whisky', 'Bullelt Bourbon, Angostura Bitters, Orange Bitters, banana liquor, brown sugar', 27,'210ml','Drink','Cocktail')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Another Martini', 'Beefeater 24, Cinzano Extra Dry, cocoa liquer', 25,'210ml','Drink','Cocktail')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Whisk(e)y Sour', 'Four Roses, lemon juice, spicy mango syrup, sugar syrup', 25,'210ml','Drink','Cocktail')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Hotel Nacional', 'Havana 3 years, lime juice, pineapple puree, Angostura Bitters, apricot brandy', 25,'210ml','Drink','Cocktail')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Angelico Negroni', 'Beefeater 24, Cinzano Rosso, Campari, Frangelico', 25,'210ml','Drink','Cocktail')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Aperol Spritz', 'Aperol, sparkling wine, sparkling water, thyme, olives', 25,'300ml','Drink','Long Drinks')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Hugo', 'sparkling wine, ederflower syrup, sparkling water, mint, lime, thyme', 25,'300ml','Drink','Long Drinks')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Campari Orange', 'Campari, orange juice, basil', 22,'350ml','Drink','Long Drinks')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Cuba Libre', 'Havana 3 years, Coca-Cola, lime, cinnamon stick', 18,'350ml','Drink','Long Drinks')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Mojito', 'Havana 3 years, mint, sparkling wine, lime juice, sugar syrup, melone liquor', 18,'350ml','Drink','Long Drinks')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Vodka Mixers', 'vodka, tonic water/ cranberry juice/ apple juice', 18,'350ml','Drink','Long Drinks')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Amerie tonic', 'Amerie, Schweppes Kinley, menta', 22,'300ml','Drink','Long Drinks')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Campari Soda', 'Campari, sparkling water, thyme', 22,'300ml','Drink','Long Drinks')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Fresh Lillet', 'Lillet Rose, Schweppes Kinley, cucumber, strawberry', 22,'300ml','Drink','Long Drinks')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Heineken Draught', ' ', 9,'400ml','Drink','Beer')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Heineken Draught', ' ', 9,'250ml','Drink','Beer')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Ciuc Draught', ' ', 7,'400ml','Drink','Beer')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Ciuc Draught', ' ', 5,'250ml','Drink','Beer')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Edelweiss Draught', ' ', 15,'500ml','Drink','Beer')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Edelweiss Draught', ' ', 10,'300ml','Drink','Beer')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Heineken Bottle', ' ', 9,'330ml','Drink','Beer')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Ciuc Bottle', ' ', 7,'330ml','Drink','Beer')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Ciuc IPA Bottle', ' ', 10,'330ml','Drink','Beer')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Silva Blonde Bottle', ' ', 9,'330ml','Drink','Beer')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Silva Black Bottle', ' ', 10,'330ml','Drink','Beer')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Heineken NA', ' ', 9,'400ml','Drink','Beer')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Ciuc Radler Raspberry & Lemon NA', ' ', 10,'500ml','Drink','Beer')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Strongbow Red Berries/Rose/Pear', ' ', 10,'330ml','Drink','Cider')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Strongbow Red Berries/Rose/Pear', ' ', 10,'330ml','Drink','Cider')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Old Mout Kiwi&Lime/Passionfruit&Apple/Summer Berries', ' ', 13,'500ml','Drink','Cider')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Coca-Cola', ' ', 7,'250ml','Drink','Soft Drinks')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Coca-Cola Zero', ' ', 7,'250ml','Drink','Soft Drinks')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Fanta Orange', ' ', 7,'250ml','Drink','Soft Drinks')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Sprite', ' ', 7,'250ml','Drink','Soft Drinks')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Schweppes tonic', ' ', 7,'250ml','Drink','Soft Drinks')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Fuzetea peach', ' ', 7,'250ml','Drink','Soft Drinks')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Izvorul alb', ' ', 7,'330ml','Drink','Soft Drinks')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Dorna sparkling water', ' ', 7,'330ml','Drink','Soft Drinks')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Red Bull', ' ', 12,'250ml','Drink','Soft Drinks')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
                 "Values('Cottage Cheese Bruschetta', 'black bread with seeds cottage cheese, cherry tomatoes, black olives,  ', 14,'150g','Food','Starters')");
         db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
                 "Values('Mozzarella Bufala', 'buffalo mozzarella, cherry,tomatoes, capers, basil emulson, black olives, toast ', 21,'260g','Food','Starters')");
@@ -321,7 +415,63 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
                 "Values('Halloumi Salad', 'grilled Halloumi, homeycomb, popcorn, pickeld radish, seasonal slaad, almond flakes, pomegranate ', 27,'250g','Food','Salads')");
         db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
-                "Values('Mushroom Tagliatelle', 'tagliatelle,mushrooms,parmesan,peas, garlic, butter,tomato, souce ', 29,'400g','Food','Pasta')");
+                "Values('Mushroom Tagliatelle', 'tagliatelle, mushrooms, parmesan, peas, garlic, butter, tomato souce', 29,'400g','Food','Pasta')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Scrambled Egg Bun', 'scrambled eggs, homemade bun, baby spanac, truffle sauce', 25,'230g','Food','Brunch')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('French Omlette', 'french omlette, parsley panko, cottage cheese', 23,'250g','Food','Brunch')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Frittata', 'egg, baby spinach, parmesan cheese, truffle oil, cherry tomatoes, bacon, arugula, red onion, parsley', 27,'280g','Food','Brunch')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Pain Perdu', 'toast, egg, wild berries yoghurt, cinnamon', 29,'230g','Food','Brunch')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Seafood Linguine', 'linguine, vongole, mussels, shrimps, garlic, cherry tomatoes, chilli peppers, parsley', 35,'350g','Food','Pasta')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Shrimp Linguine', 'linguine, shrimps, cream, white wine, lemon, parsley', 38,'350g','Food','Pasta')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Pumpkin Tagliatelle', 'tagliatelle, pumpkin, speck, cottage cheese, rosemary, green onion', 31,'460g','Food','Pasta')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Thai Noodles', 'rice noodles, seasonal vegetables, soy souce, oyster souce, ginger, hazelnuts', 29,'400g','Food','Pasta')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Roasted Cauliflower Steak', 'cauliflower steak, cauliflower mousse with truffles, Chimchurri sauce, crispy onion', 27,'300g','Food','Main Courses')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Asian Ribs', 'asian pork ribs, green onion, sesame', 34,'500g','Food','Main Courses')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Pork Belly with Cabbage Strudel', 'pork belly, speck, mushrooms, pumpkin, cabbage strudel', 28,'440g','Food','Main Courses')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Pumpkin Chicken Risotto', 'rice, chicken breast, pumpkin, parmesan, butter', 31,'460g','Food','Main Courses')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Salmon with Green beans & Basil', 'grilled salmon, green beans, tomatoes, garlic, basil, butter', 47,'375g','Food','Main Courses')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Drunken Mussels', 'mussels, tomatoes, garlic, parsley, white wine, toast', 49,'800g','Food','Main Courses')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Burger au Camembert', 'grilled camembert cheese, home made bun, arugula, orange jam', 26,'250g','Food','Urban Goodies')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Stories Burger', 'Black Angus chuck, home made bun, arugula, grilled zucchini, tomatoes, emmentaler cheese, truffle sauce', 33,'320g','Food','Urban Goodies')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Schnitzel Chalupa', 'chicken breast, panko bread, tomatoes, avocado, onion, yoghurt, capers, green salad', 26,'360g','Food','Urban Goodies')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Paella Pan', 'rice, seafood, tomatoes, bell pepper, saffron, lemon', 35,'540g','Food','Urban Goodies')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('French Fries', '', 9,'200g','Food','Sides')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('French Fries', '', 9,'200g','Food','Sides')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Sweet Potato Fries', '', 15,'200g','Food','Sides')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Anna Potatoes', '', 15,'200g','Food','Sides')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Buttered rosemary potatoes', '', 15,'200g','Food','Sides')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Rice', '', 9,'200g','Food','Sides')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Grilled vegetables', '', 15,'200g','Food','Sides')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Cream soup of the day', '', 15,'400g','Food','Soup')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Flan Patissier', 'vanilla tart, wild berries', 17,'150g','Food','Desserts')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
+                "Values('Chololate Cremeux', 'chocolate cremeux with vanilla cream, caramelized hazelnuts, sour cherries', 21,'150g','Food','Desserts')");
 
     }
     public void insertMenu(){
