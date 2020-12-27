@@ -21,6 +21,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -46,7 +47,7 @@ public class tab1 extends Fragment {
     private NonSwipeableViewPager viewPager;
     private TabLayout tabLayout;
     public PageAdapter2 pagerAdapter;
-    HashSet<String>hashSet= new HashSet<>();
+    List<String> list= new ArrayList<>();
 
     public tab1() {
         // Required empty public constructor
@@ -93,7 +94,7 @@ public class tab1 extends Fragment {
         getFoodSortiments();
         viewPager=view.findViewById(R.id.menu_viewPagerFood);
 
-        for (String s:hashSet){
+        for (String s:list){
             System.out.println(s);
             TabLayout.Tab firstTab = tabLayout.newTab();
             firstTab.setText(s);
@@ -146,11 +147,11 @@ public class tab1 extends Fragment {
 //            showMessage("Error", "Keine Tupel in der Tabelle");
 
         } else {
-            hashSet.add("All");
+            list.add("All");
             while (result.moveToNext()) {
 
                 String sortiment = result.getString(0);
-                hashSet.add(sortiment);
+                list.add(sortiment);
 
 
             }
