@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         main = this;
 
         myDb = new DatabaseHelper(this);
-        //myDb.deleteAllTables();
+//        myDb.deleteAllTables();
 //        myDb.insertData();
 //        myDb.insertFoodDrinks();
 //       myDb.insertMenu();

@@ -304,7 +304,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
                 "Values('Classic lemonade', ' ', 14,'350ml','Drink','Fresh & Lemonade')");
         db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
-                "Values('Grapefruit & cucumber lemonade', ' ', 14,'350ml','Drink','Fresh & Lemonade')");
+                "Values('Grapefruit&cucumber', ' ', 14,'350ml','Drink','Fresh & Lemonade')");
         db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
                 "Values('Orange lemonade', ' ', 14,'350ml','Drink','Fresh & Lemonade')");
         db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
@@ -384,9 +384,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
                 "Values('Ciuc Radler Raspberry & Lemon NA', ' ', 10,'500ml','Drink','Beer')");
         db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
-                "Values('Strongbow Red Berries/Rose/Pear', ' ', 10,'330ml','Drink','Cider')");
+                "Values('Strongbow ', 'Red Berries/Rose/Pear', 10,'330ml','Drink','Cider')");
         db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
-                "Values('Strongbow Red Berries/Rose/Pear', ' ', 10,'330ml','Drink','Cider')");
+                "Values('Strongbow ', 'Red Berries/Rose/Pear ', 10,'330ml','Drink','Cider')");
         db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
                 "Values('Old Mout Kiwi&Lime/Passionfruit&Apple/Summer Berries', ' ', 13,'500ml','Drink','Cider')");
         db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
@@ -440,7 +440,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
                 "Values('Asian Ribs', 'asian pork ribs, green onion, sesame', 34,'500g','Food','Main Courses')");
         db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
-                "Values('Pork Belly with Cabbage Strudel', 'pork belly, speck, mushrooms, pumpkin, cabbage strudel', 28,'440g','Food','Main Courses')");
+                "Values('Pork Belly with Cabbage', 'pork belly, speck, mushrooms, pumpkin, cabbage strudel', 28,'440g','Food','Main Courses')");
         db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
                 "Values('Pumpkin Chicken Risotto', 'rice, chicken breast, pumpkin, parmesan, butter', 31,'460g','Food','Main Courses')");
         db.execSQL("Insert  INTO " + TABLE_NAME_DRINKS_FOOD + " (NAME,INGREDIENTS, PRICE, QUANTITY, TYPE,SORTIMENT) " +
@@ -523,6 +523,162 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "Values(21, 1)");
         db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
                 "Values(22, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(23, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(24, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(31, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(30, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(39, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(40, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(52, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(53, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(55, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(56, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(64, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(65, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(67, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(68, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(69, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(70, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(71, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(74, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(78, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(79, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(84, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(85, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(88, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(89, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(96, 1)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(97, 1)");
+
+
+
+
+
+
+
+        // Restaurant 2 Menu
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(1, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(2, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(3, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(4, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(5, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(6, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(7, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(8, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(9, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(10, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(11, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(12, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(13, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(14, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(15, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(16, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(17, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(18, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(19, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(20, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(21, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(22, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(23, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(24, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(31, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(30, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(39, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(40, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(52, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(53, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(55, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(56, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(64, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(65, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(67, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(68, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(69, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(70, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(71, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(74, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(78, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(79, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(84, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(85, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(88, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(89, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(96, 2)");
+        db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
+                "Values(97, 2)");
     }
 
             //------    FOOD FUNCTIONS    ------//
@@ -533,9 +689,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result;
     }
 
-    public Cursor getallFoodSortimentsFromMenu(){
+    public Cursor getallFoodSortimentsFromMenu(int id){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor result = db.rawQuery("select distinct SORTIMENT  from " + TABLE_NAME_DRINKS_FOOD+ " where TYPE='Food'", null);
+        Cursor result = db.rawQuery("select distinct SORTIMENT  from " + TABLE_NAME_MENU+ " inner join "+TABLE_NAME_DRINKS_FOOD+" on "+TABLE_NAME_DRINKS_FOOD+".ID="+TABLE_NAME_MENU+".ITEMID where TYPE='Food' and  RID="+ id, null);
         return result;
     }
 
@@ -553,9 +709,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result;
     }
 
-    public Cursor getallDrinksSortimentsFromMenu(){
+    public Cursor getallDrinksSortimentsFromMenu(int id){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor result = db.rawQuery("select distinct SORTIMENT  from " + TABLE_NAME_DRINKS_FOOD+ " where TYPE='Drink'", null);
+        Cursor result = db.rawQuery("select distinct SORTIMENT  from "+ TABLE_NAME_MENU+ " inner join "+TABLE_NAME_DRINKS_FOOD+" on "+TABLE_NAME_DRINKS_FOOD+".ID="+TABLE_NAME_MENU+".ITEMID where TYPE='Drink' and  RID="+ id, null);
         return result;
     }
 

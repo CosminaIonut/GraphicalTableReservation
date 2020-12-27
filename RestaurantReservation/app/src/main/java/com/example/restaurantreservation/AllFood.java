@@ -112,11 +112,21 @@ public class AllFood extends Fragment {
             result=myDb.getallFoodSortiment(restaurantId,"Starters");
 
         }else if(position==2){
-            result=myDb.getallFoodSortiment(restaurantId,"Salads");
+            result=myDb.getallFoodSortiment(restaurantId,"Brunch");
 
         }else if(position==3){
-            result=myDb.getallFoodSortiment(restaurantId,"Pasta");
+            result=myDb.getallFoodSortiment(restaurantId,"Main Courses");
 
+        }else if(position==4) {
+            result = myDb.getallFoodSortiment(restaurantId, "Urban Goodies");
+        }else if(position==5) {
+            result = myDb.getallFoodSortiment(restaurantId, "Salads");
+        }else if(position==6) {
+            result = myDb.getallFoodSortiment(restaurantId, "Pasta");
+        }else if(position==7) {
+            result = myDb.getallFoodSortiment(restaurantId, "Desserts");
+        }else if(position==8 ) {
+            result = myDb.getallFoodSortiment(restaurantId, "Sides");
         }
 //        System.out.println(position);
        

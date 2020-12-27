@@ -69,14 +69,12 @@ public class MenuFragment extends Fragment {
            btnNavFrgMenu.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View view) {
-//                  Toast.makeText(getActivity(),"Going to Frg Menu", Toast.LENGTH_SHORT).show();
                   ((RestaurantHomePage)getActivity()).setViewPager(1);
               }
           });
         btnNavFrgRestaurant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Toast.makeText(getActivity(),"Going to Frg Restaurnat", Toast.LENGTH_SHORT).show();
                 ((RestaurantHomePage)getActivity()).setViewPager(0);
             }
         });

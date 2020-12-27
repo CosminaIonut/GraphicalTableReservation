@@ -139,9 +139,11 @@ public class tab1 extends Fragment {
     }
 
     public void getFoodSortiments(){
-        Cursor result = myDb.getallFoodSortimentsFromMenu();
+        Bundle extras =getActivity().getIntent().getExtras();
+        int id = Integer.parseInt(extras.getString("RestaurantID"));
+        Cursor result = myDb.getallFoodSortimentsFromMenu(id);
         if (result.getCount() == 0) {
-            showMessage("Error", "Keine Tupel in der Tabelle");
+//            showMessage("Error", "Keine Tupel in der Tabelle");
 
         } else {
             hashSet.add("All");

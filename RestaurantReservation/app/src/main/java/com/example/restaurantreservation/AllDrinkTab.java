@@ -115,7 +115,25 @@ public class AllDrinkTab extends Fragment {
             result = myDb.getallDrinkSortiment(restaurantId, "Fresh & Lemonade");
 
         } else if (position == 3) {
+            result = myDb.getallDrinkSortiment(restaurantId, "Soft Drinks");
+
+        } else if (position == 4) {
+            result = myDb.getallDrinkSortiment(restaurantId, "Cocktail");
+
+        } else if (position == 5) {
+            result = myDb.getallDrinkSortiment(restaurantId, "Long Drinks");
+
+        } else if (position == 6) {
+            result = myDb.getallDrinkSortiment(restaurantId, "Cider");
+
+        } else if (position == 7) {
             result = myDb.getallDrinkSortiment(restaurantId, "Coffee");
+
+        } else if (position == 8) {
+            result = myDb.getallDrinkSortiment(restaurantId, "Gin");
+
+        } else if (position == 9) {
+            result = myDb.getallDrinkSortiment(restaurantId, "Beer");
 
         }
 //        System.out.println(position);
