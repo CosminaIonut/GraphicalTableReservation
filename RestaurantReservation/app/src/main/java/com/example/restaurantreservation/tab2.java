@@ -136,6 +136,7 @@ public class tab2 extends Fragment {
     }
 
     public void getDrinkSortiments(){
+        list= new ArrayList<>();
         Bundle extras =getActivity().getIntent().getExtras();
         int id = Integer.parseInt(extras.getString("RestaurantID"));
         Cursor result = myDb.getallDrinksSortimentsFromMenu(id);

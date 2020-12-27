@@ -140,6 +140,7 @@ public class tab1 extends Fragment {
     }
 
     public void getFoodSortiments(){
+        list= new ArrayList<>();
         Bundle extras =getActivity().getIntent().getExtras();
         int id = Integer.parseInt(extras.getString("RestaurantID"));
         Cursor result = myDb.getallFoodSortimentsFromMenu(id);
@@ -156,6 +157,7 @@ public class tab1 extends Fragment {
 
             }
         }
+
     }
 
     public void showMessage(String title, String  message){
