@@ -202,7 +202,7 @@ public class MapPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 boolean ok = myDb.insertBooking(name, phone, date, startHour, endHour, tableid);
-                Toast.makeText(MapPage.this, String.valueOf(ok), Toast.LENGTH_SHORT).show(); // for testing
+//                Toast.makeText(MapPage.this, String.valueOf(ok), Toast.LENGTH_SHORT).show(); // for testing
                 int resID = getResources().getIdentifier("bookedtable" , "drawable", getPackageName());
                 tv.setImageResource(resID);
                 dialog.dismiss();

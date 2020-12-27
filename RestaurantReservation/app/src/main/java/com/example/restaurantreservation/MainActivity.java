@@ -85,15 +85,15 @@ public class MainActivity extends AppCompatActivity {
         main = this;
 
         myDb = new DatabaseHelper(this);
-//        myDb.deleteAllTables();
+        //myDb.deleteAllTables();
 //        myDb.insertData();
 //        myDb.insertFoodDrinks();
-//        myDb.insertMenu();
-//        myDb.deleteAllRestaurants();
+//       myDb.insertMenu();
+////        myDb.deleteAllRestaurants();
 //        myDb.insertMoarRestaurants();
-
-        // restaurant 2 stuff
-        //myDb.insertData();
+//
+//       //  restaurant 2 stuff
+//        myDb.insertData();
 //        myDb.insertMapToRestaurant();
 
         setContentView(R.layout.activity_main);

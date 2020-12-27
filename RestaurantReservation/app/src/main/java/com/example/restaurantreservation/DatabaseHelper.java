@@ -59,7 +59,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void insertData() {
         SQLiteDatabase db = this.getWritableDatabase();
         // Table coordinates for restaurant 1
-        /*
+
         db.execSQL("Insert  INTO " + TABLE_NAME_TABLE + " (X,Y, MAPID) Values(200,100,1)");
         db.execSQL("Insert  INTO " + TABLE_NAME_TABLE + " (X,Y, MAPID) Values(120,230,1)");
         db.execSQL("Insert  INTO " + TABLE_NAME_TABLE + " (X,Y, MAPID) Values(200,350,1)");
@@ -68,7 +68,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("Insert  INTO " + TABLE_NAME_TABLE + " (X,Y, MAPID) Values(650,200,1)");
         db.execSQL("Insert  INTO " + TABLE_NAME_TABLE + " (X,Y, MAPID) Values(500, 300,1)");
         db.execSQL("Insert  INTO " + TABLE_NAME_TABLE + " (X,Y, MAPID) Values(575, 650,1)");
-        */
+
 
         // Table coordinates for restaurant 2
         db.execSQL("Insert  INTO " + TABLE_NAME_TABLE + " (X,Y, MAPID) Values(150,200,2)");
@@ -268,8 +268,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public String getName(String email){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("select * from " + TABLE_NAME_USERS + " where email='"+email +"'", null);
-        cursor.moveToNext();
-        return cursor.getString(0);
+        while(cursor.moveToNext()){
+            return cursor.getString(0);
+        }
+        return "";
+
     }
 
 
