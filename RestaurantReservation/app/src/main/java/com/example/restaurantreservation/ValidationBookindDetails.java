@@ -45,4 +45,17 @@ public class ValidationBookindDetails {
         return true;
     }
 
+    public  boolean moreThen11NumbersInString(String string) {
+        int numberOfNumbers = 0;
+        for (int i = 0; i < string.length(); i++) {
+            if (Character.isDigit(string.charAt(i))) {
+                numberOfNumbers++;
+                if (numberOfNumbers ==11) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 }

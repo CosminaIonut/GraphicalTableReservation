@@ -58,7 +58,6 @@ public class AllFood extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment tab3.
      */
-    // TODO: Rename and change types and number of parameters
     public static AllFood newInstance(String param1, String param2) {
         AllFood fragment = new AllFood();
         Bundle args = new Bundle();
@@ -128,8 +127,7 @@ public class AllFood extends Fragment {
         }else if(position==8 ) {
             result = myDb.getallFoodSortiment(restaurantId, "Desserts");
         }
-//        System.out.println(position);
-       
+
         if (result.getCount() == 0) {
             showMessage("Error", "Keine Tupel in der Tabelle");
 
@@ -143,7 +141,6 @@ public class AllFood extends Fragment {
                 String quantity = result.getString(6);
                 String type = result.getString(7);
                 String sortiment = result.getString(8);
-//                listItem.add(itemName);
                 item_id.add(itemID);
                 item_name.add(itemName);
                 item_desc.add(itemDescription);

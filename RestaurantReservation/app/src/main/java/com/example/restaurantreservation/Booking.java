@@ -31,6 +31,7 @@ public class Booking extends AppCompatActivity implements DatePickerDialog.OnDat
     ValidationBookindDetails validate = new ValidationBookindDetails();
     boolean pastTime = true;
     boolean endTbefrorestartT = false;
+    boolean isphoneNumberValid= false;
     int startHo = 0, endHo = 0, startM = 0, endM = 0;
     Dialog dialog;
     TextView datePick,startH,endH;
@@ -55,7 +56,6 @@ public class Booking extends AppCompatActivity implements DatePickerDialog.OnDat
         fullName = findViewById(R.id.fullName);
         final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         final String pref_Name = preferences.getString("pref_NAME", "");
-        System.out.println(pref_Name+"---------------------------------------------------");
         Button cancelButton = findViewById(R.id.candelbooking);
         fullName.setText(pref_Name);
 
@@ -86,8 +86,9 @@ public class Booking extends AppCompatActivity implements DatePickerDialog.OnDat
 
         buttonBooking.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                isphoneNumberValid= validate.moreThen11NumbersInString(String.valueOf(phone.getText()));
 
-                if (pastTime && endTbefrorestartT) {
+                if (pastTime && endTbefrorestartT && isphoneNumberValid)  {
 
                     Intent tableActivity = new Intent(getApplicationContext(), MapPage.class);
                     tableActivity.putExtra("phone", String.valueOf(phone.getText()));
@@ -102,10 +103,13 @@ public class Booking extends AppCompatActivity implements DatePickerDialog.OnDat
                         String message = "Fields cannot be empty";
                         errorDialog(message);
                     } else if (!pastTime) {
-                        String message = "The start hour musst be after the current hour";
+                        String message = "The start hour must be after the current hour";
                         errorDialog(message);
-                    } else {
-                        String message = "The end time musst be after the start time";
+                    } else if (!isphoneNumberValid) {
+                        String message = "Phone number is invalid";
+                        errorDialog(message);
+                    }else {
+                        String message = "The end time must be after the start time";
                         errorDialog(message);
                     }
 

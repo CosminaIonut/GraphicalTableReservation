@@ -121,9 +121,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     * */
     public void insertMoarRestaurants(){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("Insert  INTO " + TABLE_NAME_RESTAURANT + " (NAME,ADRESS) Values('McTest', 'Str. Paris 23')");
         db.execSQL("Insert  INTO " + TABLE_NAME_RESTAURANT + " (NAME,ADRESS) Values('Refresh', 'Str. General Magheru 2')");
         db.execSQL("Insert  INTO " + TABLE_NAME_RESTAURANT + " (NAME,ADRESS) Values('Stories', 'Str. Victor Deleu 1')");
+        db.execSQL("Insert  INTO " + TABLE_NAME_RESTAURANT + " (NAME,ADRESS) Values('McTest', 'Str. Paris 23')");
     }
 
     /*
