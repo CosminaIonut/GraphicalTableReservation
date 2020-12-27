@@ -132,6 +132,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     * */
     public void insertMapToRestaurant(){
         SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("Insert  INTO " + TABLE_NAME_MAP + " (PHOTOBG,  RID) Values('restaurantmap1', 1)");
         db.execSQL("Insert  INTO " + TABLE_NAME_MAP + " (PHOTOBG,  RID) Values('restaurantmap2', 2)");
     }
 
@@ -575,10 +576,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "Values(96, 1)");
         db.execSQL("Insert  INTO " + TABLE_NAME_MENU + " (ITEMID,RID) " +
                 "Values(97, 1)");
-
-
-
-
 
 
 

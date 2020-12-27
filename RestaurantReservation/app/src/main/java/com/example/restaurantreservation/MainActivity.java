@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -27,6 +28,7 @@ import com.example.restaurantreservation.RecyclerViewAdapter;
 import com.example.restaurantreservation.RestaurantCard;
 import com.example.restaurantreservation.RestaurantHomePage;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,23 +80,45 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private static boolean doesDatabaseExist(Context context, String dbName) {
+        try{
+            File dbFile = context.getDatabasePath(dbName);
+            return dbFile.exists();
+        }
+        catch(Exception e){
+            return false;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         main = this;
 
-        myDb = new DatabaseHelper(this);
-//        myDb.deleteAllTables();
-//        myDb.insertData();
-//        myDb.insertFoodDrinks();
-//       myDb.insertMenu();
-////        myDb.deleteAllRestaurants();
-//        myDb.insertMoarRestaurants();
-//
-//       //  restaurant 2 stuff
-//        myDb.insertData();
-//        myDb.insertMapToRestaurant();
+        boolean DBexist = doesDatabaseExist(this, "RestaurantApp.db");
+
+        if(!DBexist){
+            // onCreate() -> creates the database and the tables
+            myDb = new DatabaseHelper(this);
+
+            // add the restaurants to the db
+            myDb.insertMoarRestaurants();
+
+            // bind the maps to the restaurant id, mandatory before insertData()
+            myDb.insertMapToRestaurant();
+
+            // add the tables coordinates to the db
+            myDb.insertData();
+
+            // populate the food and drinks table
+            myDb.insertFoodDrinks();
+
+            // bind consumables ids to the menu of the restaurants
+            myDb.insertMenu();
+        }
+        else{
+            myDb = new DatabaseHelper(this);
+        }
 
         setContentView(R.layout.activity_main);
         helloText= findViewById(R.id.textUsername);
