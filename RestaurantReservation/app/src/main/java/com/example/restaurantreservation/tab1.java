@@ -106,10 +106,7 @@ public class tab1 extends Fragment {
                 pagerAdapter.addFragment(new AllFood(i),"food");
         }
         viewPager.setAdapter(pagerAdapter);
-//        tabLayout.setupWithViewPager(viewPager);
-
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
-
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -145,7 +142,6 @@ public class tab1 extends Fragment {
         int id = Integer.parseInt(extras.getString("RestaurantID"));
         Cursor result = myDb.getallFoodSortimentsFromMenu(id);
         if (result.getCount() == 0) {
-//            showMessage("Error", "Keine Tupel in der Tabelle");
 
         } else {
             list.add("All");
@@ -160,12 +156,4 @@ public class tab1 extends Fragment {
 
     }
 
-    public void showMessage(String title, String  message){
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder. setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(message);
-        builder.show();
-    }
 }

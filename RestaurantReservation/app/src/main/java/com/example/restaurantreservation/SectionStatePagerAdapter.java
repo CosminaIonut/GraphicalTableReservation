@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SectionStatePagerAdapter extends FragmentStatePagerAdapter {
+    // Page adapter for the Restaurant Home Page Fragment
     private final List<Fragment> mFragmentList= new ArrayList<>();
     private final List<String> mFragmentTitleList = new ArrayList<>();
     public SectionStatePagerAdapter(FragmentManager fm, int behavior) {

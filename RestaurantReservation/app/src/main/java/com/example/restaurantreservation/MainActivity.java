@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
     EditText searchBar;
     TextView helloText;
     ImageView imageLogin;
-    List<RestaurantCard> listRestaurant;
     public static Activity main;
 
     /*
@@ -127,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
         final String pref_email = preferences.getString("pref_USERNAME", "");
         String name = "";
 
+         //login/ logout button dependif id signed in or not
         if (pref_email.equals("")){
             String mdrawable="loginbtn";
             final int resID = getResources().getIdentifier(mdrawable , "drawable", getPackageName());
@@ -166,7 +166,6 @@ public class MainActivity extends AppCompatActivity {
         helloText.setText(name);
         searchBar=findViewById(R.id.search);
 
-        final Cursor result = myDb.getAllRestaurants();
 
         storeDataInArray("");
         final RecyclerView recyclerView=(RecyclerView) findViewById(R.id.recyclerview_id);

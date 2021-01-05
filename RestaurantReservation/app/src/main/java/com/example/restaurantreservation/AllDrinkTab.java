@@ -87,7 +87,6 @@ public class AllDrinkTab extends Fragment {
         myDb = new DatabaseHelper(getContext());
         Bundle extras =getActivity().getIntent().getExtras();
         int id = Integer.parseInt(extras.getString("RestaurantID"));
-        System.out.println(id+ "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
         storeDataInArray(id);
         View view = inflater.inflate(R.layout.fragment_all_drink_tab, container, false);
         recyclerView = view.findViewById(R.id.menuListDrink);
@@ -102,7 +101,6 @@ public class AllDrinkTab extends Fragment {
 
     public void storeDataInArray(int restaurantId) {
 
-//        int restaurantId = 1; // acum hardcodat da o sa vina in functie de restaurant
         Cursor result = myDb.getallDrinksFromMenu(restaurantId);
         ;
         if (position == 0) {
@@ -138,7 +136,6 @@ public class AllDrinkTab extends Fragment {
             result = myDb.getallDrinkSortiment(restaurantId, "Soft Drinks");
 
         }
-//        System.out.println(position);
 
         if (result.getCount() == 0) {
             showMessage("Error", "Keine Tupel in der Tabelle");
@@ -153,7 +150,6 @@ public class AllDrinkTab extends Fragment {
                 String quantity = result.getString(6);
                 String type = result.getString(7);
                 String sortiment = result.getString(8);
-//                listItem.add(itemName);
                 item_id.add(itemID);
                 item_name.add(itemName);
                 item_desc.add(itemDescription);

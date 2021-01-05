@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 public class PageAdapter3 extends FragmentPagerAdapter {
+    // Page Adapter for Drink Fragment
     private int numofTabs;
     public PageAdapter3(@NonNull FragmentManager fm, int numofTabs) {
         super(fm);

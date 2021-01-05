@@ -126,14 +126,7 @@ public class tab2 extends Fragment {
 
         return view;
     }
-    public void showMessage(String title, String  message){
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder. setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(message);
-        builder.show();
-    }
 
     public void getDrinkSortiments(){
         list= new ArrayList<>();
@@ -141,7 +134,6 @@ public class tab2 extends Fragment {
         int id = Integer.parseInt(extras.getString("RestaurantID"));
         Cursor result = myDb.getallDrinksSortimentsFromMenu(id);
         if (result.getCount() == 0) {
-//            showMessage("Error", "Keine Tupel in der Tabelle");
 
         } else {
             list.add("All");

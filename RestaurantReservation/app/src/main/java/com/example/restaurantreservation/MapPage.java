@@ -1,25 +1,18 @@
 package com.example.restaurantreservation;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -95,7 +88,6 @@ public class MapPage extends AppCompatActivity {
         // Change display of the table button depending on booking availability.
         boolean isTableAlreadyBooked;
         if (result.getCount() == 0){
-//            showMessage("Error", "Keine Tupel in der Tabelle");
                 return;
         }else {
             while(result.moveToNext()){
@@ -202,7 +194,6 @@ public class MapPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 boolean ok = myDb.insertBooking(name, phone, date, startHour, endHour, tableid);
-//                Toast.makeText(MapPage.this, String.valueOf(ok), Toast.LENGTH_SHORT).show(); // for testing
                 int resID = getResources().getIdentifier("bookedtable" , "drawable", getPackageName());
                 tv.setImageResource(resID);
                 dialog.dismiss();

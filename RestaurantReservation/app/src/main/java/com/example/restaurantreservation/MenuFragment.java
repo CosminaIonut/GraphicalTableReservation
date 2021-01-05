@@ -33,7 +33,6 @@ public class MenuFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-//        return super.onCreateView(inflater, container, savedInstanceState);
           final View view = inflater.inflate(R.layout.menu_fragemnt, container, false);
           btnNavFrgMenu= view.findViewById(R.id.menu_fragment);
           btnNavFrgRestaurant= view.findViewById(R.id.restaurant_fragment);
@@ -43,6 +42,7 @@ public class MenuFragment extends Fragment {
           viewPager=view.findViewById(R.id.menu_viewPager);
           pagerAdapter= new PageAdapter(getFragmentManager(),tabLayout.getTabCount());
           viewPager.setAdapter(pagerAdapter);
+          // Tableyout with food an drinks tabs
           tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
               @Override
               public void onTabSelected(TabLayout.Tab tab) {
@@ -64,15 +64,15 @@ public class MenuFragment extends Fragment {
 
               }
           });
+          // move to map Home Fragment or to Menu Fragemnt
           viewPager.addOnPageChangeListener( new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
-           btnNavFrgMenu.setOnClickListener(new View.OnClickListener() {
+          btnNavFrgMenu.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View view) {
                   ((RestaurantHomePage)getActivity()).setViewPager(1);
               }
           });
-        btnNavFrgRestaurant.setOnClickListener(new View.OnClickListener() {
+         btnNavFrgRestaurant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ((RestaurantHomePage)getActivity()).setViewPager(0);

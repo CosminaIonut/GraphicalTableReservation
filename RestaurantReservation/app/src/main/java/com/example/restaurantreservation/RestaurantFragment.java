@@ -30,7 +30,6 @@ public class RestaurantFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-//        return super.onCreateView(inflater, container, savedInstanceState);
           View view = inflater.inflate(R.layout.restaurant_fragment, container, false);
           map=view.findViewById(R.id.imageView6);
           Bundle extras =getActivity().getIntent().getExtras();
@@ -64,16 +63,6 @@ public class RestaurantFragment extends Fragment {
                 final String pref_userName = preferences.getString("pref_USERNAME", "");
                 if (pref_userName == "") {
                      errorDialog( "In order to book a table you must be logged in first.");
-//                    final Handler handler = new Handler();
-//                    handler.postDelayed(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            // Do something after 5s = 5000ms
-//                            Intent intent = new Intent(getActivity() , LoginActivity.class);
-//                            startActivity(intent);
-//                        }
-//                    }, 5000);
-
                 }else{
                     Intent intent = new Intent(getActivity() , Booking.class);
                     intent.putExtra("RestaurantID",String.valueOf(id));
@@ -87,13 +76,7 @@ public class RestaurantFragment extends Fragment {
 
           return view;
     }
-    public void showMessage(String title, String  message){
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(message);
-        builder.show();
-    }
+
     public void errorDialog(String message) {
         dialog = new Dialog(getContext());
         dialog.setContentView(R.layout.dialog_booking_login);

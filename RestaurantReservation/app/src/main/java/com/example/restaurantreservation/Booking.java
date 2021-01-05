@@ -183,7 +183,6 @@ public class Booking extends AppCompatActivity implements DatePickerDialog.OnDat
         TextView textDialog = dialog.findViewById(R.id.text_dialog);
         textDialog.setText(message);
         dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.dialog_background));
-//                    Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
         dialog.setCancelable(false);
         Button cancel = dialog.findViewById(R.id.btn_dialog);

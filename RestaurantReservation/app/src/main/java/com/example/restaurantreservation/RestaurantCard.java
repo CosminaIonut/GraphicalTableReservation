@@ -1,7 +1,7 @@
 package com.example.restaurantreservation;
 
 public class RestaurantCard {
-
+   // RestaurantCard for the Home page
     private String title;
     private String adress;
     private int thumbnail;

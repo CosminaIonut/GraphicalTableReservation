@@ -36,6 +36,9 @@ public class SignUpActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.passwordTextSignUpPage);
         go = (ImageButton) findViewById(R.id.goButtonSignUpPage);
         db = new DatabaseHelper(this);
+
+        // create Prefrence to store the email and user of the logged user
+        // check if credentails are valid and the user does not already exist.
         final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         go.setOnClickListener(new View.OnClickListener() {
             @Override

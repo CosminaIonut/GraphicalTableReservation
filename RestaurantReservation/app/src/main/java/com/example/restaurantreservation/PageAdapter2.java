@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PageAdapter2 extends FragmentPagerAdapter {
+    // Page Adapter for Food Fragment
     private int numofTabs;
     private List<Fragment> mFragmentList = new ArrayList<>();
     private List<String> mFragmentTitleList = new ArrayList<>();

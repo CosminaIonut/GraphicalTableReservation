@@ -37,9 +37,8 @@ public class AllFood extends Fragment {
     ArrayList<String> item_id,item_name, item_desc, item_price , item_quantity, item_sortiment;
     RecyclerView recyclerView;
     CustomAdapter customAdapter;
-    private NonSwipeableViewPager viewPager;
     private TabLayout tabLayout;
-    public PageAdapter2 pagerAdapter;
+
 
 
     public AllFood() {

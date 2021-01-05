@@ -31,6 +31,8 @@ public class SplashScreen extends AppCompatActivity {
         image.setAnimation(topAnim);
         logo.setAnimation(bottomAnim);
         slogan.setAnimation(bottomAnim);
+
+        //after 5 seconds the Splash screen disappears and it appears the Home page
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

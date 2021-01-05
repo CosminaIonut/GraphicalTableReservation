@@ -36,11 +36,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         view=layoutInflater.inflate(R.layout.cardview_item_restaurant,parent,false);
         return new MyViewHolder(view);
     }
-
+    // RecyclerView for Cards in the App Home Page
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
-
+       // fill the placeholders with date from the Database
         holder.rest_name.setText(String.valueOf(rest_name.get(position)));
         holder.iv_restaurant_image.setImageResource((int) rest_thumbnail.get(position));
         holder.rest_adress.setText(String.valueOf(rest_adress.get(position)));
@@ -69,13 +69,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView rest_id,rest_name,rest_adress;
         ImageView iv_restaurant_image;
         CardView cardView;
-
+        // get the palceholders
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             rest_name=itemView.findViewById(R.id.restaurant_title_id);
             rest_adress=itemView.findViewById(R.id.restaurant_adress_id);
-
             iv_restaurant_image=(ImageView) itemView.findViewById(R.id.restaurant_iamge_id);
             cardView=(CardView)itemView.findViewById(R.id.cardViewId);
         }
