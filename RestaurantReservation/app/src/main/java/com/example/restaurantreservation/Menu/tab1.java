@@ -1,29 +1,30 @@
-package com.example.restaurantreservation;
+package com.example.restaurantreservation.Menu;
 
-import android.app.AlertDialog;
 import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.restaurantreservation.DatabaseHelper;
+import com.example.restaurantreservation.NonSwipeableViewPager;
+import com.example.restaurantreservation.R;
+import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link tab2#newInstance} factory method to
+ * Use the {@link tab1#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class tab2 extends Fragment {
+public class tab1 extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,16 +35,17 @@ public class tab2 extends Fragment {
     private String mParam1;
     private String mParam2;
     CustomAdapter customAdapter;
+    private TabItem t1, t2,t3;
+
     DatabaseHelper myDb;
     ArrayList<String> item_id,item_name, item_desc, item_price , item_quantity, item_sortiment;
     RecyclerView recyclerView;
     private NonSwipeableViewPager viewPager;
     private TabLayout tabLayout;
-    public PageAdapter3 pagerAdapter;
+    public PageAdapter2 pagerAdapter;
     List<String> list= new ArrayList<>();
 
-
-    public tab2() {
+    public tab1() {
         // Required empty public constructor
     }
 
@@ -53,11 +55,11 @@ public class tab2 extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment tab2.
+     * @return A new instance of fragment tab1.
      */
     // TODO: Rename and change types and number of parameters
-    public static tab2 newInstance(String param1, String param2) {
-        tab2 fragment = new tab2();
+    public static tab1 newInstance(String param1, String param2) {
+        tab1 fragment = new tab1();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -67,35 +69,39 @@ public class tab2 extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_tab2, container, false);
-        tabLayout= view.findViewById(R.id.tabLayoutDrinkSection);
-        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+
+        View view = inflater.inflate(R.layout.fragment_tab1, container, false);
+        tabLayout = (TabLayout) view.findViewById(R.id.tabLayoutFoodSection);
         myDb = new DatabaseHelper(getContext());
 
-        getDrinkSortiments();
-        viewPager=view.findViewById(R.id.menu_viewPagerDrink);
+        getFoodSortiments();
+        viewPager=view.findViewById(R.id.menu_viewPagerFood);
+
         for (String s:list){
             System.out.println(s);
             TabLayout.Tab firstTab = tabLayout.newTab();
             firstTab.setText(s);
             tabLayout.addTab(firstTab);
         }
-
-        System.out.println(tabLayout.getTabCount());
-        pagerAdapter= new PageAdapter3(getFragmentManager(),tabLayout.getTabCount());
+        pagerAdapter= new PageAdapter2(getFragmentManager(),tabLayout.getTabCount());
+        int number = tabLayout.getTabCount();
+        for (int i=0; i<= number;i++){
+                pagerAdapter.addFragment(new AllFood(i),"food");
+        }
         viewPager.setAdapter(pagerAdapter);
-
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -123,16 +129,14 @@ public class tab2 extends Fragment {
             }
         });
 
-
         return view;
     }
 
-
-    public void getDrinkSortiments(){
+    public void getFoodSortiments(){
         list= new ArrayList<>();
         Bundle extras =getActivity().getIntent().getExtras();
         int id = Integer.parseInt(extras.getString("RestaurantID"));
-        Cursor result = myDb.getallDrinksSortimentsFromMenu(id);
+        Cursor result = myDb.getallFoodSortimentsFromMenu(id);
         if (result.getCount() == 0) {
 
         } else {
@@ -145,5 +149,7 @@ public class tab2 extends Fragment {
 
             }
         }
+
     }
+
 }

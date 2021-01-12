@@ -1,4 +1,4 @@
-package com.example.restaurantreservation;
+package com.example.restaurantreservation.Menu;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

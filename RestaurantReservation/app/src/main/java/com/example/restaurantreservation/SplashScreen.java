@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.restaurantreservation.HomePage.MainActivity;
+
 public class SplashScreen extends AppCompatActivity {
     private static  int SPLASH_SCREEN= 5000;
     Animation topAnim, bottomAnim;

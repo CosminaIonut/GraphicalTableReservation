@@ -1,4 +1,4 @@
-package com.example.restaurantreservation;
+package com.example.restaurantreservation.Menu;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.restaurantreservation.R;
 
 import java.util.ArrayList;
 

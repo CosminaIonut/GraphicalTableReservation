@@ -1,4 +1,4 @@
-package com.example.restaurantreservation;
+package com.example.restaurantreservation.Booking;
 
 import android.app.Dialog;
 import android.app.TimePickerDialog;

@@ -1,4 +1,4 @@
-package com.example.restaurantreservation;
+package com.example.restaurantreservation.HomePage;
 
 public class RestaurantCard {
    // RestaurantCard for the Home page

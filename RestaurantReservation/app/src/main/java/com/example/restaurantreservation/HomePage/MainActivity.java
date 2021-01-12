@@ -1,11 +1,10 @@
-package com.example.restaurantreservation;
+package com.example.restaurantreservation.HomePage;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,22 +14,17 @@ import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.restaurantreservation.Authentification.LoginActivity;
 import com.example.restaurantreservation.DatabaseHelper;
-import com.example.restaurantreservation.LoginActivity;
+import com.example.restaurantreservation.HomePage.RecyclerViewAdapter;
 import com.example.restaurantreservation.R;
-import com.example.restaurantreservation.RecyclerViewAdapter;
-import com.example.restaurantreservation.RestaurantCard;
-import com.example.restaurantreservation.RestaurantHomePage;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     DatabaseHelper myDb;

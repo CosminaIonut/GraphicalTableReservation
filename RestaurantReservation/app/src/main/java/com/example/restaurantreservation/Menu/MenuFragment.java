@@ -1,14 +1,9 @@
-package com.example.restaurantreservation;
+package com.example.restaurantreservation.Menu;
 
-import android.app.AlertDialog;
-import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,10 +11,10 @@ import androidx.fragment.app.Fragment;
 
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.restaurantreservation.R;
+import com.example.restaurantreservation.RestaurantHomePage.RestaurantHomePage;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
-
-import java.util.ArrayList;
 
 public class MenuFragment extends Fragment {
     private static final String TAG="MenuFragment";

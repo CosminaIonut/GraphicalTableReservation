@@ -1,4 +1,4 @@
-package com.example.restaurantreservation;
+package com.example.restaurantreservation.RestaurantHomePage;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

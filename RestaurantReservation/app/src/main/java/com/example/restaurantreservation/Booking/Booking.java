@@ -1,4 +1,4 @@
-package com.example.restaurantreservation;
+package com.example.restaurantreservation.Booking;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
@@ -20,6 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 
+import com.example.restaurantreservation.R;
+import com.example.restaurantreservation.RestaurantHomePage.RestaurantHomePage;
 import com.santalu.maskedittext.MaskEditText;
 
 import java.text.DateFormat;

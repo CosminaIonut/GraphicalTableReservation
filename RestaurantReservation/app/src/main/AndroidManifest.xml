@@ -9,12 +9,12 @@
         android:roundIcon="@drawable/logo_restaurant_booking"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".SignUpActivity"></activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".Booking" />
-        <activity android:name=".RestaurantHomePage" />
-        <activity android:name=".MapPage" />
+        <activity android:name=".HomePage.MainActivity"></activity>
+        <activity android:name=".Authentification.SignUpActivity"></activity>
+        <activity android:name=".Authentification.LoginActivity" />
+        <activity android:name=".Booking.Booking" />
+        <activity android:name=".RestaurantHomePage.RestaurantHomePage" />
+        <activity android:name=".Booking.MapPage" />
 
         <activity android:name=".SplashScreen">
             <intent-filter>

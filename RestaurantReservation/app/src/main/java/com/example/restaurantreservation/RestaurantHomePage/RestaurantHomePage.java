@@ -1,14 +1,15 @@
-package com.example.restaurantreservation;
+package com.example.restaurantreservation.RestaurantHomePage;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.restaurantreservation.Menu.MenuFragment;
+import com.example.restaurantreservation.R;
 
 public class RestaurantHomePage extends AppCompatActivity {
     private static final int BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT =1;

@@ -1,4 +1,4 @@
-package com.example.restaurantreservation;
+package com.example.restaurantreservation.Booking;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +13,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.example.restaurantreservation.DatabaseHelper;
+import com.example.restaurantreservation.HomePage.MainActivity;
+import com.example.restaurantreservation.R;
 
 import java.text.DateFormat;
 import java.text.ParseException;

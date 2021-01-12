@@ -1,4 +1,4 @@
-package com.example.restaurantreservation;
+package com.example.restaurantreservation.Menu;
 
 import android.app.AlertDialog;
 import android.database.Cursor;
@@ -12,16 +12,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.restaurantreservation.DatabaseHelper;
+import com.example.restaurantreservation.R;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link AllDrinkTab#newInstance} factory method to
+ * Use the {@link AllFood#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AllDrinkTab extends Fragment {
+public class AllFood extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,29 +37,29 @@ public class AllDrinkTab extends Fragment {
     DatabaseHelper myDb;
     ArrayList<String> item_id,item_name, item_desc, item_price , item_quantity, item_sortiment;
     RecyclerView recyclerView;
-    CustomAdapterDrinks customAdapter;
-    private NonSwipeableViewPager viewPager;
+    CustomAdapter customAdapter;
     private TabLayout tabLayout;
-    public PageAdapter2 pagerAdapter;
 
-    public AllDrinkTab() {
+
+
+    public AllFood() {
         // Required empty public constructor
     }
-    public AllDrinkTab(int pos){
+    public AllFood(int pos){
         position=pos;
 
     }
+
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment AllDrinkTab.
+     * @return A new instance of fragment tab3.
      */
-    // TODO: Rename and change types and number of parameters
-    public static AllDrinkTab newInstance(String param1, String param2) {
-        AllDrinkTab fragment = new AllDrinkTab();
+    public static AllFood newInstance(String param1, String param2) {
+        AllFood fragment = new AllFood();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -86,55 +88,44 @@ public class AllDrinkTab extends Fragment {
         item_sortiment = new ArrayList<>();
         myDb = new DatabaseHelper(getContext());
         Bundle extras =getActivity().getIntent().getExtras();
-        int id = Integer.parseInt(extras.getString("RestaurantID"));
+        int id = Integer.parseInt(extras.getString("RestaurantID" +""));
         storeDataInArray(id);
-        View view = inflater.inflate(R.layout.fragment_all_drink_tab, container, false);
-        recyclerView = view.findViewById(R.id.menuListDrink);
-        tabLayout = (TabLayout) view.findViewById(R.id.tabLayoutDrinkSection);
+
+        View view = inflater.inflate(R.layout.fragment_allfood, container, false);
+        recyclerView = view.findViewById(R.id.menuList);
+        tabLayout = (TabLayout) view.findViewById(R.id.tabLayoutFoodSection);
 
         RecyclerView.LayoutManager recyce = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(recyce);
-        customAdapter = new CustomAdapterDrinks(getContext(), item_id, item_name, item_desc, item_price, item_quantity, item_sortiment);
+        customAdapter = new CustomAdapter(getContext(), item_id, item_name, item_desc, item_price, item_quantity, item_sortiment);
         recyclerView.setAdapter(customAdapter);
         return view;
+
     }
+    public void storeDataInArray(int restaurantId ) {
 
-    public void storeDataInArray(int restaurantId) {
+        Cursor result =myDb.getallFoodFromMenu(restaurantId);;
+        if(position==0){ 
+            result = myDb.getallFoodFromMenu(restaurantId);
+        }else if(position==1){
+            result=myDb.getallFoodSortiment(restaurantId,"Starters");
 
-        Cursor result = myDb.getallDrinksFromMenu(restaurantId);
-        ;
-        if (position == 0) {
-            result = myDb.getallDrinksFromMenu(restaurantId);
-        } else if (position == 1) {
-            result = myDb.getallDrinkSortiment(restaurantId, "Coffee");
+        }else if(position==2){
+            result=myDb.getallFoodSortiment(restaurantId,"Salads");
 
+        }else if(position==3){
+            result=myDb.getallFoodSortiment(restaurantId,"Pasta");
 
-        }  else if (position == 2) {
-            result = myDb.getallDrinkSortiment(restaurantId, "Tea");
-
-
-        }
-        else if (position == 3) {
-            result = myDb.getallDrinkSortiment(restaurantId, "Fresh & Lemonade");
-
-        } else if (position == 4) {
-            result = myDb.getallDrinkSortiment(restaurantId, "Gin");
-
-        } else if (position == 5) {
-            result = myDb.getallDrinkSortiment(restaurantId, "Cocktail");
-
-        } else if (position == 6) {
-            result = myDb.getallDrinkSortiment(restaurantId, "Long Drinks");
-
-        } else if (position == 7) {
-            result = myDb.getallDrinkSortiment(restaurantId, "Beer");
-
-        }  else if (position == 8) {
-            result = myDb.getallDrinkSortiment(restaurantId, "Cider");
-
-        } else if (position == 9) {
-            result = myDb.getallDrinkSortiment(restaurantId, "Soft Drinks");
-
+        }else if(position==4) {
+            result = myDb.getallFoodSortiment(restaurantId, "Brunch");
+        }else if(position==5) {
+            result = myDb.getallFoodSortiment(restaurantId, "Main Courses");
+        }else if(position==6) {
+            result = myDb.getallFoodSortiment(restaurantId, "Urban Goodies");
+        }else if(position==7) {
+            result = myDb.getallFoodSortiment(restaurantId, "Sides");
+        }else if(position==8 ) {
+            result = myDb.getallFoodSortiment(restaurantId, "Desserts");
         }
 
         if (result.getCount() == 0) {
@@ -159,15 +150,13 @@ public class AllDrinkTab extends Fragment {
 
             }
         }
-
     }
     public void showMessage(String title, String  message){
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-            builder. setCancelable(true);
-            builder.setTitle(title);
-            builder.setMessage(message);
-            builder.show();
-        }
-
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder. setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.show();
+    }
 }

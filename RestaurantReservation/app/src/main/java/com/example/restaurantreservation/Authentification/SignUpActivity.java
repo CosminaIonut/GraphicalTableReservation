@@ -1,4 +1,4 @@
-package com.example.restaurantreservation;
+package com.example.restaurantreservation.Authentification;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.restaurantreservation.DatabaseHelper;
+import com.example.restaurantreservation.HomePage.MainActivity;
+import com.example.restaurantreservation.R;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -25,7 +29,6 @@ public class SignUpActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.signInTextSignUpPage);
         textView.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                System.out.println("Button Clicked");
                 Intent loginActivity = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(loginActivity);
             }
